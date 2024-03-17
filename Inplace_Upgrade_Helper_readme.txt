@@ -6,6 +6,7 @@ Ihr wollt Pro installieren, aber das Setup springt automatisch auf Home, weil de
 Habt ihr Pro installiert aber merkt erst hinterher, das ihr nur eine Lizenz für Home habt aber seid zu faul für ein Clean-Install?
 Ihr wollt Home direkt auf Enterprise upgraden, da es technisch nichts anderes ist als ein Upgrade auf Pro, aber rein aus Lizenzgründen lässt es das Setup nicht zu?
 Dabei merkt ihr, das die Enterprise-Edition eigentlich gar nicht auf eurer Consumer-ISO / auf eurem MediaCreationTool-USB-Stick drauf ist?
+Ihr wollt von Pro Education zurück zur Pro, aber es gibt keinen Up- und Downgrade-Pfad? https://learn.microsoft.com/en-us/windows/deployment/upgrade/windows-edition-upgrades
 Neuinstallationen habt ihr mit angepasster EI.cfg im Griff aber (Inplace-)Upgrades geben euch keine Editionsauswahl?
 Ihr wollte ohne Bastelei und Modifikationen an der WIM ein (beinahe) All-In-One Installationsmedium bauen?
 
