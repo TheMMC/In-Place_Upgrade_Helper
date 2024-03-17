@@ -4,6 +4,8 @@ cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) &&
 @echo off
 cls
 SETLOCAL
+REM Windows Pro wird vorausgewÑhlt. Das verhindert, das man die Auswahl leer lÑsst und dann "Upgrade erzwingen" auswÑhlt, sonst werden leere Werte in die Registry geschrieben.
+REM FÅr die Umsetzung einer automatischen Erkennung der jetzt installierten Edition bin ich zu faul, dafÅr ist dieses Tool ja auch nicht da. 
 set productkey=VK7JG-NPHTM-C97JM-9MPGT-3V66T
 set editionid=Professional
 set productname=Windows 10 Pro
@@ -14,7 +16,7 @@ set forcedupgrade=Nein
 cls
 ECHO.
 ECHO M-M-C's quick-n-dirty Inplace-Upgrade-Helper fÅr Win10/11
-echo V0.21 Beta
+echo V0.41
 ECHO.
 echo.
 echo Derzeit ausgewÑhlt:

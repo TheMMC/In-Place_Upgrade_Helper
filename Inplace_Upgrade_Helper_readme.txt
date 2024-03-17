@@ -51,8 +51,20 @@ Sprich: Eine Standard-ISO oder ein Standard-USB-Stick (https://www.microsoft.com
 Im Moment unterstützt das Tool nur die normalen Versionen, keine N/K/China Editionen.
 Alle Installationstests wurden mit de-de_windows_11_consumer_editions_version_23h2_updated_feb_2024_x64_dvd_9665512b.iso und einem MediaCreationTool Win11_23H2 USB-Stick als Basis gemacht.
 
+ACHTUNG:
+LTSC-Editionen sind NICHT in den normalen Installationsmedien enthalten. Um diese Funktion zu nutzen muss man sich selbst die passende ISO organisieren.
+Windows 10 Enterprise LTSC 2021 (und IoT/N) wurden mit de-de_windows_10_enterprise_ltsc_2021_x64_dvd_71796d33.iso getestet.
+Fun fact: Die IoT bietet MS nur als englische Version an, man soll entweder ein Language-Pack nutzen oder ein fertig installiertes Nicht-Englisches-Nicht-IoT-LTSC per Key auf IoT upgraden.
+Benutzt man dieses Tool und/oder passt sich das Installationsmedium mit abbodi1406's create_virtual_editions.cmd an, erhält man z.B. trotzdem ein deutsches IoT Enterprise LTSC basierend auf offiziellen MS-Quelldateien.
+Der Vorinstallations-Key für LTSC 2024 ist zwar schon verfügbar (CGK42-GYN6Y-VD22B-BX98W-J8JXD), aber die Edition ist bisher nur eine geleakte technical preview evaluation. Erst nach Tests mit der Final wird der Key zu diesem Tool hinzugefügt.
+
+
 
 Changelog:
+V0.41
+Formatierung gefixt, die Readme sieht jetzt auch auf Gitgub und im Windows-Editor ordentlich aus.
+Einige Kommentare in die Batch eingefügt.
+
 V0.40
 LTSC 2021 hinzugefügt.
 
