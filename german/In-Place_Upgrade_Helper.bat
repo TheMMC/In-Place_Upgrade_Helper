@@ -1,7 +1,18 @@
-Rem Admin-Rechte holen
-cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
-
 @echo off
+
+Rem Admin-Rechte holen
+>nul 2>&1 fsutil dirty query %systemdrive% && (goto gotAdmin) || (goto UACPrompt)
+:UACPrompt
+if exist "%SYSTEMROOT%\System32\Cscript.exe" (
+    echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B
+) else (
+    powershell -Command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'"
+    exit /b
+)
+:gotAdmin
+if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs"
+pushd "%CD%" && CD /D "%~dp0"
+
 cls
 SETLOCAL
 REM Windows Pro wird vorausgew„hlt. Das verhindert, das man die Auswahl leer l„sst und dann "Upgrade erzwingen" ausw„hlt, sonst werden leere Werte in die Registry geschrieben.
