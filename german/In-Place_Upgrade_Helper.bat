@@ -4,11 +4,14 @@ cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) &&
 @echo off
 cls
 SETLOCAL
-REM Windows Pro wird vorausgewÑhlt. Das verhindert, das man die Auswahl leer lÑsst und dann "Upgrade erzwingen" auswÑhlt, sonst werden leere Werte in die Registry geschrieben.
-REM FÅr die Umsetzung einer automatischen Erkennung der gerade installierten Edition bin ich zu faul, dafÅr ist dieses Tool ja auch nicht da. 
-set productkey=VK7JG-NPHTM-C97JM-9MPGT-3V66T
-set editionid=Professional
-set productname=Windows 10 Pro
+REM Automatisches Laden der Systemvariablen
+for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName') do set productname=%%j
+for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v EditionID') do set editionid=%%j
+for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductKey') do set productkey=%%j
+REM ‹berpr¸fen, ob die Variablen gesetzt wurden, und Standardwerte verwenden, wenn nicht
+if "%productname%"=="" set productname=Windows 10 Pro
+if "%editionid%"=="" set editionid=Professional
+if "%productkey%"=="" set productkey=VK7JG-NPHTM-C97JM-9MPGT-3V66T
 set "choice="
 set sourcespath=.
 
