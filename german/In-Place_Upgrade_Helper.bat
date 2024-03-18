@@ -141,7 +141,8 @@ echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlieát
 goto endofbatch
 
 :nosetupfound
-echo Setup.exe und/oder Sources-Ordner nicht gefunden, versuche ein externes Installationmedium zu finden...
+echo Setup.exe und/oder Sources-Ordner nicht gefunden! Tool nicht zu den Installationsdateien kopiert?
+echo Versuche ein externes Installationmedium zu nutzen...
 set /p sourcespath=Bitte Pfad zum Installationsmedium (z.B. F:\ oder D:\entpackesISO\) eingeben: 
 goto premainmenu
 
