@@ -5,21 +5,25 @@ cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) &&
 cls
 SETLOCAL
 REM Windows Pro wird vorausgewÑhlt. Das verhindert, das man die Auswahl leer lÑsst und dann "Upgrade erzwingen" auswÑhlt, sonst werden leere Werte in die Registry geschrieben.
-REM FÅr die Umsetzung einer automatischen Erkennung der jetzt installierten Edition bin ich zu faul, dafÅr ist dieses Tool ja auch nicht da. 
+REM FÅr die Umsetzung einer automatischen Erkennung der gerade installierten Edition bin ich zu faul, dafÅr ist dieses Tool ja auch nicht da. 
 set productkey=VK7JG-NPHTM-C97JM-9MPGT-3V66T
 set editionid=Professional
 set productname=Windows 10 Pro
 set "choice="
-set forcedupgrade=Nein
+set sourcespath=.
+
+:premainmenu
+if not exist "%sourcespath%"\setup.exe goto nosetupfound
+if not exist "%sourcespath%"\sources\ goto nosetupfound
 
 :mainmenu
 cls
 ECHO.
-ECHO M-M-C's quick-n-dirty Inplace-Upgrade-Helper fÅr Win10/11
-echo V0.50
+ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper fÅr Win10/11
+echo V0.60
 ECHO.
 echo.
-echo Derzeit ausgewÑhlt:
+echo Derzeit ausgewÑhlt (Pro ist immer vorausgewÑhlt):
 echo.
 echo EditionID: %editionid%
 echo.
@@ -29,26 +33,17 @@ echo.
 echo OEM ProductKey: %productkey%
 echo (offizieller Key von Microsoft zum Vorinstallieren, nicht zum Aktivieren)
 echo.
-echo Inplace-Upgrade erzwingen: %forcedupgrade%
 echo.
-echo.
-echo 1) Windows Home
-echo 2) Windows Pro
-echo 3) Windows Pro for Workstations
-echo 4) Windows Enterprise
-echo 5) Windows Pro Education
-echo 6) Windows Education
-echo 7) Windows Enterprise multi-session / Virtual Desktops
+echo 1) Windows Home                      11) Windows Home N
+echo 2) Windows Pro                       12) Windows Pro N
+echo 3) Windows Pro for Workstations      13) Windows Pro N for Workstations
+echo 4) Windows Enterprise                14) Windows Pro Education N
+echo 5) Windows Pro Education             15) Windows Education N
+echo 6) Windows Education                 16) Windows Enterprise N
+echo 7) Windows Enterprise multi-session  17) Windows SE CloudEdition N
 echo 8) Windows IoT Enterprise
 echo 9) Windows Home Single Language
 echo 10) Windows SE CloudEdition
-echo 11) Windows Home N
-echo 12) Windows Pro N
-echo 13) Windows Pro N for Workstations
-echo 14) Windows Pro Education N
-echo 15) Windows Education N
-echo 16) Windows Enterprise N
-echo 17) Windows SE CloudEdition N
 echo.
 echo Sondereditionen, nur erhÑltlich auf separaten Installationsmedien:
 echo 18) Windows 10 Enterprise LTSC 2021
@@ -56,10 +51,10 @@ echo 19) Windows 10 IoT Enterprise LTSC 2021
 echo 20) Windows 10 Enterprise N LTSC 2021
 echo.
 echo.
-echo k) Methode 1) Versuche den ausgewÑhlten Key mit slmgr zu installieren (simpler Editionswechsel ohne Inplace-Upgrade)
-echo s) Methode 2) Standard-Upgrade ohne Editionsauswahl starten, Setup entscheidet alleine
-echo u) Methode 3) Upgrade mit der ausgewÑhlten Edition starten
-echo f) Methode 4) ERZWUNGENES Upgrade mit der ausgewÑhlten Edition starten
+echo k) Methode 1) Versuche den ausgewÑhlten Key mit slmgr zu installieren (simpler Editionswechsel ohne In-Place-Upgrade)
+echo s) Methode 2) Upgrade ohne Editionsauswahl starten, Setup entscheidet alleine. Entspricht einem normalen In-Place-Upgrade
+echo u) Methode 3) Upgrade auf die ausgewÑhlten Edition starten. Der passende Vorinstallations-Key wird dabei fÅr das Setup genutzt
+echo f) Methode 4) ERZWUNGENES Upgrade auf die ausgewÑhlten Edition starten. Der passende Vorinstallations-Key wird dabei fÅr das Setup genutzt
 echo.
 echo.
 
@@ -109,29 +104,29 @@ goto mainmenu
 :runboringupgrade
 echo.
 echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
-setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable
+%sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable
 goto endofbatch
 
 :runupgrade
 echo.
 echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
-setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable /pkey %productkey%
+%sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable /pkey %productkey%
 goto endofbatch
 
 :runforcedupgrade
 echo.
-echo Erzwingt ein Inplace-Upgrade (Apps und Einstellungen bleiben erhalten) auf die ausgewÑhlte Version, indem in der Registry eine andere Version "vorgegaukelt" wird.
+echo Erzwingt ein In-Place-Upgrade (Apps und Einstellungen bleiben erhalten) auf die ausgewÑhlte Version, indem in der Registry eine andere Version "vorgegaukelt" wird.
 echo Soll z.B. die Pro installiert werden, dann wird "ProductName" und "EditionID" in der Registy mit den Werten der Pro-Edition Åberschrieben.
-echo Setup denkt dann es ist bereits die Pro installiert und fÑhrt mit dem Inplace-Upgrade fort.
-echo So kann man ein Inplace-Upgrade machen, welches nicht im offiziellen Upgrade-Pfad ist, z.B. auch Downgrades von Pro zu Home.
+echo Setup denkt dann es ist bereits die Pro installiert und fÑhrt mit dem In-Place-Upgrade fort.
+echo So kann man ein In-Place-Upgrade machen, welches nicht im offiziellen Upgrade-Pfad ist, z.B. auch Downgrades von Pro zu Home.
 echo Aber auch aus lizenzgrÅnden gesperrte Upgrade-Pfade, wie Home direkt zu Enterprise, lassen sich damit freischalten.
 echo Oder auch ganz kreative Sachen wie Win10 Edu auf Win10 IoT Enterprise LTSC funktionieren.
 echo.
 echo Dieses ist natÅrlich komplett unsupported von Microsoft, Benutzung auf eigene Gefahr.
-echo Probleme sind allerdings bisher nicht aufgetreten, alles verhÑlt sich wie ein normales Inplace-Upgrade.
+echo Probleme sind allerdings bisher nicht aufgetreten, alles verhÑlt sich wie ein normales In-Place-Upgrade.
 echo Wirklich fortfahren? Ansonsten mit STRG+C abbrechen oder einfach das Fenster schlie·en.
 echo.
-echo Sollte man aus Versehen eine falsche Edition in die Registry geschrieben haben, einfach das erzwungene Inplace-Upgrade mit der richtigen Edition erneut starten.
+echo Sollte man aus Versehen eine falsche Edition in die Registry geschrieben haben, einfach das erzwungene In-Place-Upgrade mit der richtigen Edition erneut starten.
 echo.
 pause
 echo.
@@ -142,9 +137,13 @@ Reg.exe add "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion" /v "
 Reg.exe add "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion" /v "ProductName" /t REG_SZ /d "%productname%" /f
 echo.
 echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
-setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable /pkey %productkey%
+%sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable /pkey %productkey%
 goto endofbatch
 
+:nosetupfound
+echo Setup.exe und/oder Sources-Ordner nicht gefunden, versuche ein externes Installationmedium zu finden...
+set /p sourcespath=Bitte Pfad zum Installationsmedium (z.B. F:\ oder D:\entpackesISO\) eingeben: 
+goto premainmenu
 
 REM Hier werden die verschiedenen Windows-Editionen definiert
 
