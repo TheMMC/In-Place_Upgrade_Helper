@@ -60,6 +60,11 @@ Der Vorinstallations-Key für LTSC 2024 ist zwar auch schon verfügbar (CGK42-GY
 
 
 Changelog:
+V0.50
+Erwzungenes Upgrade ist jetzt kein Schalter mehr sondern ein eigener Menüpunkt.
+Einiges neu formatiert, das Menü sieht jetzt etwas übersichtlicher aus.
+Sollten sich keine Fehler eingeschlichen haben wird diese Version die Vorlage für die englische Übersetzung.
+
 V0.41
 Formatierung gefixt, die Readme sieht jetzt auch auf Gitgub und im Windows-Editor ordentlich aus.
 Einige Kommentare in die Batch eingefügt.

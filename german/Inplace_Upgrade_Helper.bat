@@ -16,7 +16,7 @@ set forcedupgrade=Nein
 cls
 ECHO.
 ECHO M-M-C's quick-n-dirty Inplace-Upgrade-Helper fÅr Win10/11
-echo V0.41
+echo V0.50
 ECHO.
 echo.
 echo Derzeit ausgewÑhlt:
@@ -49,17 +49,20 @@ echo 14) Windows Pro Education N
 echo 15) Windows Education N
 echo 16) Windows Enterprise N
 echo 17) Windows SE CloudEdition N
+echo.
 echo Sondereditionen, nur erhÑltlich auf separaten Installationsmedien:
 echo 18) Windows 10 Enterprise LTSC 2021
 echo 19) Windows 10 IoT Enterprise LTSC 2021
 echo 20) Windows 10 Enterprise N LTSC 2021
 echo.
-echo u) Upgrade mit der ausgewÑhlten Edition starten
+echo.
+echo k) Methode 1) Versuche den ausgewÑhlten Key mit slmgr zu installieren (simpler Editionswechsel ohne Inplace-Upgrade)
+echo s) Methode 2) Standard-Upgrade ohne Editionsauswahl starten, Setup entscheidet alleine
+echo u) Methode 3) Upgrade mit der ausgewÑhlten Edition starten
+echo f) Methode 4) ERZWUNGENES Upgrade mit der ausgewÑhlten Edition starten
 echo.
 echo.
-echo k) Versuche den ausgewÑhlten Key mit slmgr zu installieren (Editionswechsel ohne Inplace-Upgrade). Reicht oft schon aus.
-echo s) Standard-Upgrade ohne Editionsauswahl, Setup entscheidet alleine
-echo f) Erzwungenes Upgrade an/aus
+
 echo 0) exit
 
 set "choice="
@@ -90,17 +93,12 @@ if '%choice%'=='k' goto keychange
 if '%choice%'=='K' goto keychange
 if '%choice%'=='s' goto runboringupgrade
 if '%choice%'=='S' goto runboringupgrade
-if '%choice%'=='f' goto toggleforceupgrade
-if '%choice%'=='F' goto toggleforceupgrade
+if '%choice%'=='f' goto runforcedupgrade
+if '%choice%'=='F' goto runforcedupgrade
 if '%choice%'=='0' goto endofbatch
 ECHO.
 ECHO "%choice%" wurde nicht gefunden, bitte erneut versuchen &ECHO. &pause
 ECHO.
-goto mainmenu
-
-:toggleforceupgrade
-if '%forcedupgrade%'=='Ja' set forcedupgrade=Nein&goto mainmenu
-if '%forcedupgrade%'=='Nein' set forcedupgrade=Ja&goto mainmenu
 goto mainmenu
 
 :keychange
@@ -115,7 +113,6 @@ setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartit
 goto endofbatch
 
 :runupgrade
-if '%forcedupgrade%'=='Ja' goto runforcedupgrade
 echo.
 echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
 setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable /pkey %productkey%
@@ -128,6 +125,7 @@ echo Soll z.B. die Pro installiert werden, dann wird "ProductName" und "EditionI
 echo Setup denkt dann es ist bereits die Pro installiert und fÑhrt mit dem Inplace-Upgrade fort.
 echo So kann man ein Inplace-Upgrade machen, welches nicht im offiziellen Upgrade-Pfad ist, z.B. auch Downgrades von Pro zu Home.
 echo Aber auch aus lizenzgrÅnden gesperrte Upgrade-Pfade, wie Home direkt zu Enterprise, lassen sich damit freischalten.
+echo Oder auch ganz kreative Sachen wie Win10 Edu auf Win10 IoT Enterprise LTSC funktionieren.
 echo.
 echo Dieses ist natÅrlich komplett unsupported von Microsoft, Benutzung auf eigene Gefahr.
 echo Probleme sind allerdings bisher nicht aufgetreten, alles verhÑlt sich wie ein normales Inplace-Upgrade.
