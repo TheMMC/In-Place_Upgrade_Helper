@@ -4,7 +4,9 @@ Rem Admin-Rechte holen
 >nul 2>&1 fsutil dirty query %systemdrive% && (goto gotAdmin) || (goto UACPrompt)
 :UACPrompt
 if exist "%SYSTEMROOT%\System32\Cscript.exe" (
-    echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B
+    echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "%~s0", "", "", "runas", 1 > "%temp%\getadmin.vbs" 
+    "%temp%\getadmin.vbs"
+    exit /b
 ) else (
     powershell -Command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'"
     exit /b
@@ -12,13 +14,12 @@ if exist "%SYSTEMROOT%\System32\Cscript.exe" (
 :gotAdmin
 if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs"
 pushd "%CD%" && CD /D "%~dp0"
-
 cls
 SETLOCAL
 REM Automatisches Laden der Systemvariablen
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName') do set productname=%%j
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v EditionID') do set editionid=%%j
-REM ‹berpr¸fen, ob die Variablen gesetzt wurden, und Standardwerte verwenden, wenn nicht
+REM √úberpr√ºfen, ob die Variablen gesetzt wurden, und Standardwerte verwenden, wenn nicht
 if "%productname%"=="" set productname=Windows 10 Pro
 if "%editionid%"=="" set editionid=Professional
 
@@ -32,11 +33,11 @@ if not exist "%sourcespath%"\sources\ goto nosetupfound
 :mainmenu
 cls
 ECHO.
-ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper fÅr Win10/11
+ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper f¬År Win10/11
 echo V0.60
 ECHO.
 echo.
-echo Derzeit ausgewÑhlt:
+echo Derzeit ausgew‚Äûhlt:
 echo.
 echo EditionID: %editionid%
 echo.
@@ -59,16 +60,16 @@ echo 8) Windows IoT Enterprise
 echo 9) Windows Home Single Language
 echo 10) Windows SE CloudEdition
 echo.
-echo Sondereditionen, nur erhÑltlich auf separaten Installationsmedien:
+echo Sondereditionen, nur erh‚Äûltlich auf separaten Installationsmedien:
 echo 18) Windows 10 Enterprise LTSC 2021
 echo 19) Windows 10 IoT Enterprise LTSC 2021
 echo 20) Windows 10 Enterprise N LTSC 2021
 echo.
 echo.
-echo k) Methode 1) Versuche den ausgewÑhlten Key mit slmgr zu installieren (simpler Editionswechsel ohne In-Place-Upgrade)
+echo k) Methode 1) Versuche den ausgew‚Äûhlten Key mit slmgr zu installieren (simpler Editionswechsel ohne In-Place-Upgrade)
 echo s) Methode 2) Upgrade ohne Editionsauswahl starten, Setup entscheidet alleine. Entspricht einem normalen In-Place-Upgrade
-echo u) Methode 3) Upgrade auf die ausgewÑhlten Edition starten. Der passende Vorinstallations-Key wird dabei fÅr das Setup genutzt
-echo f) Methode 4) ERZWUNGENES Upgrade auf die ausgewÑhlten Edition starten. Der passende Vorinstallations-Key wird dabei fÅr das Setup genutzt
+echo u) Methode 3) Upgrade auf die ausgew‚Äûhlten Edition starten. Der passende Vorinstallations-Key wird dabei f¬År das Setup genutzt
+echo f) Methode 4) ERZWUNGENES Upgrade auf die ausgew‚Äûhlten Edition starten. Der passende Vorinstallations-Key wird dabei f¬År das Setup genutzt
 echo.
 echo.
 
@@ -112,49 +113,49 @@ goto mainmenu
 
 :keychange
 if "%productkey%"=="" goto nokeyselected
-echo Es wird versucht die Edition per simplen Keywechsel zu Ñndern...
+echo Es wird versucht die Edition per simplen Keywechsel zu ‚Äûndern...
 slmgr /ipk %productkey%
 goto mainmenu
 
 :runboringupgrade
 if "%productkey%"=="" goto nokeyselected
 echo.
-echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
+echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie√°t danach automatisch.
 %sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable
 goto endofbatch
 
 :runupgrade
 if "%productkey%"=="" goto nokeyselected
 echo.
-echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
+echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie√°t danach automatisch.
 %sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable /pkey %productkey%
 goto endofbatch
 
 :runforcedupgrade
 if "%productkey%"=="" goto nokeyselected
 echo.
-echo Erzwingt ein In-Place-Upgrade (Apps und Einstellungen bleiben erhalten) auf die ausgewÑhlte Version, indem in der Registry eine andere Version "vorgegaukelt" wird.
-echo Soll z.B. die Pro installiert werden, dann wird "ProductName" und "EditionID" in der Registy mit den Werten der Pro-Edition Åberschrieben.
-echo Setup denkt dann es ist bereits die Pro installiert und fÑhrt mit dem In-Place-Upgrade fort.
+echo Erzwingt ein In-Place-Upgrade (Apps und Einstellungen bleiben erhalten) auf die ausgew‚Äûhlte Version, indem in der Registry eine andere Version "vorgegaukelt" wird.
+echo Soll z.B. die Pro installiert werden, dann wird "ProductName" und "EditionID" in der Registy mit den Werten der Pro-Edition ¬Åberschrieben.
+echo Setup denkt dann es ist bereits die Pro installiert und f‚Äûhrt mit dem In-Place-Upgrade fort.
 echo So kann man ein In-Place-Upgrade machen, welches nicht im offiziellen Upgrade-Pfad ist, z.B. auch Downgrades von Pro zu Home.
-echo Aber auch aus lizenzgrÅnden gesperrte Upgrade-Pfade, wie Home direkt zu Enterprise, lassen sich damit freischalten.
+echo Aber auch aus lizenzgr¬Ånden gesperrte Upgrade-Pfade, wie Home direkt zu Enterprise, lassen sich damit freischalten.
 echo Oder auch ganz kreative Sachen wie Win10 Edu auf Win10 IoT Enterprise LTSC funktionieren.
 echo.
-echo Dieses ist natÅrlich komplett unsupported von Microsoft, Benutzung auf eigene Gefahr.
-echo Probleme sind allerdings bisher nicht aufgetreten, alles verhÑlt sich wie ein normales In-Place-Upgrade.
-echo Wirklich fortfahren? Ansonsten mit STRG+C abbrechen oder einfach das Fenster schlie·en.
+echo Dieses ist nat¬Årlich komplett unsupported von Microsoft, Benutzung auf eigene Gefahr.
+echo Probleme sind allerdings bisher nicht aufgetreten, alles verh‚Äûlt sich wie ein normales In-Place-Upgrade.
+echo Wirklich fortfahren? Ansonsten mit STRG+C abbrechen oder einfach das Fenster schlie√°en.
 echo.
 echo Sollte man aus Versehen eine falsche Edition in die Registry geschrieben haben, einfach das erzwungene In-Place-Upgrade mit der richtigen Edition erneut starten.
 echo.
 pause
 echo.
-echo Setze Registry-EintrÑge...
+echo Setze Registry-Eintr‚Äûge...
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "EditionID" /t REG_SZ /d "%editionid%" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "ProductName" /t REG_SZ /d "%productname%" /f
 Reg.exe add "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion" /v "EditionID" /t REG_SZ /d "%editionid%" /f
 Reg.exe add "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion" /v "ProductName" /t REG_SZ /d "%productname%" /f
 echo.
-echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
+echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie√°t danach automatisch.
 %sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable /pkey %productkey%
 goto endofbatch
 
@@ -165,7 +166,7 @@ set /p sourcespath=Bitte Pfad zum Installationsmedium (z.B. F:\ oder D:\entpacke
 goto premainmenu
 
 :nokeyselected
-echo Keine Edition mit Key ausgewÑhlt! Bitte erneut versuchen.
+echo Keine Edition mit Key ausgew‚Äûhlt! Bitte erneut versuchen.
 echo.
 pause
 goto mainmenu
