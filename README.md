@@ -1,4 +1,6 @@
 This is an upgrade-helper-tool for Win10/11
+
+
 This tool can upgrade Windows via three different methods:
 
 
@@ -9,6 +11,7 @@ This tool can upgrade Windows via three different methods:
 
 
 -start a forced inplace-upgrade to keep all apps and settings. This method uses registry modifcations in combination with OEM-GLVK-keys. This allowes shenanigans like Pro to Home, Education Pro or Enterprise, or even something like Win10 Education to Win10 IoT Enterprise LTSC. This is of course unsupported by Microsoft. Create a backup and use a your own risk.
+
 
 
 
