@@ -55,21 +55,21 @@ echo CompositionEditionID: %compositioneditionid%
 echo (Basis-Edition, worauf die eigentliche Edition technisch basiert)
 echo.
 echo.
-echo 1) Windows Home                      11) Windows Home N
-echo 2) Windows Pro                       12) Windows Pro N
-echo 3) Windows Pro for Workstations      13) Windows Pro N for Workstations
-echo 4) Windows Enterprise                14) Windows Pro Education N
-echo 5) Windows Pro Education             15) Windows Education N
-echo 6) Windows Education                 16) Windows Enterprise N
-echo 7) Windows Enterprise multi-session  17) Windows SE CloudEdition N
+echo 1) Windows Home                          11) Windows Home N
+echo 2) Windows Pro                           12) Windows Pro N
+echo 3) Windows Pro for Workstations          13) Windows Pro N for Workstations
+echo 4) Windows Enterprise                    14) Windows Pro Education N
+echo 5) Windows Pro Education                 15) Windows Education N
+echo 6) Windows Education                     16) Windows Enterprise N
+echo 7) Windows Enterprise multi-session      17) Windows 11 SE CloudEdition N
 echo 8) Windows IoT Enterprise
 echo 9) Windows Home Single Language
-echo 10) Windows SE CloudEdition
+echo 10) Windows 11 SE CloudEdition
 echo.
 echo Sondereditionen, nur erh„ltlich auf separaten Installationsmedien:
-echo 18) Windows 10 Enterprise LTSC 2021
-echo 19) Windows 10 IoT Enterprise LTSC 2021
-echo 20) Windows 10 Enterprise N LTSC 2021
+echo 18) Windows 10 Enterprise LTSC 2021      21) Windows Server 2022 Standard
+echo 19) Windows 10 IoT Enterprise LTSC 2021  22) Windows Server 2022 Datacenter
+echo 20) Windows 10 Enterprise N LTSC 2021    
 echo.
 echo.
 echo k) Methode 1) Versuche den ausgew„hlten Key mit slmgr zu installieren (simpler Editionswechsel ohne In-Place-Upgrade)
@@ -103,6 +103,8 @@ if '%choice%'=='17' goto setvarcloudn
 if '%choice%'=='18' goto setvarltsc2021
 if '%choice%'=='19' goto setvariotltsc2021
 if '%choice%'=='20' goto setvarltscn2021
+if '%choice%'=='21' goto setvarserv22std
+if '%choice%'=='22' goto setvarserv22data
 if '%choice%'=='u' goto runupgrade
 if '%choice%'=='U' goto runupgrade
 if '%choice%'=='k' goto keychange
@@ -339,6 +341,22 @@ set productkey=2D7NQ-3MDXF-9WTDT-X9CCP-CKD8V
 set editionid=EnterpriseSN
 set productname=Windows 10 Enterprise N LTSC 2021
 set compositioneditionid=EnterpriseSN
+goto mainmenu
+
+REM Windows Server 2022 Standard / Standard with desktop experience
+:setvarserv22std
+set productkey=VDYBN-27WPP-V4HQT-9VMD4-VMK7H
+set editionid=ServerStandard
+set productname=Windows Server 2022 Standard
+set compositioneditionid=ServerStandard
+goto mainmenu
+
+REM Windows Server 2022 Datacenter / Datacenter with desktop experience
+:setvarserv22data
+set productkey=WX4NM-KYWYW-QJJR4-XV3QB-6VM33
+set editionid=ServerDatacenter
+set productname=Windows Server 2022 Datacenter
+set compositioneditionid=ServerDatacenter
 goto mainmenu
 
 :endofbatch

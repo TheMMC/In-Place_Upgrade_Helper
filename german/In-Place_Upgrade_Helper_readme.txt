@@ -61,6 +61,9 @@ Der Vorinstallations-Key für LTSC 2024 ist zwar auch schon verfügbar (CGK42-GY
 
 
 Changelog:
+V0.71
+Jetzt mit Server 2022
+
 V0.70
 Danke an LizenzFass78851 für den Codeschnipsel zum auslesen der gerade laufenden Windows-Edition und der etwas sichereren Methode Adminrechte zu holen.
 Tekkie Boy aus dem Deskmodder-Forum hat noch einen Bug gemeldet, der den Registry-Eintrag CompositionEditionID betrifft. Das erzwungene Upgrade setzt jetzt auch diesen Eintrag.
