@@ -21,4 +21,4 @@ Simply copy this tool to your installation-media alongside setup.exe and run it.
 
 This is work in progress. This tool does NOT activate Windows, all keys are publically available OEM-GLVK-keys.
 This tool is german only at this point.
-Translation is ongoing. A Github-describtion with pictures and more information will follow after that.
+Translation is ongoing. A Github-description with pictures and more information will follow after that.
