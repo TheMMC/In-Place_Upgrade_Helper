@@ -1,26 +1,25 @@
-This is an upgrade-helper-tool for Win10/11
-
+This is an upgrade helper tool for Windows 10 and 11.
 
 This tool can upgrade Windows via four different methods:
 
+- Changing the product key via `slmgr`. This method only supports [the official upgrade paths][1].
 
--simple key-change with slmgr ( see https://learn.microsoft.com/en-us/windows/deployment/upgrade/windows-edition-upgrades for supported upgrade-paths)
+- Starting `Setup.exe` and letting it choose the edition by itself. This is an ordinary in-place upgrade.
 
--start setup.exe and let it choose the edition by itself. More or less just the normal inplace-upgrade.
+- Starting an in-place upgrade of a Windows edition of your choice. This method stops Windows Setup from using any firmware-embedded keys or your current edition. This is done by using an OEM GLVK key as a setup parameter. This method only supports [the official upgrade paths][1].
 
--start inplace-upgrade of a Windows-Edition of your choice. This stops Windows-Setup from using any build-in BIOS/UEFI/Firmware-key or using your current edition without asking. This is done by using OEM/-GLVK-keys as setup parameter. Official upgrade-paths still apply: https://learn.microsoft.com/en-us/windows/deployment/upgrade/windows-upgrade-paths
+- Starting a forced in-place upgrade to keep all apps and settings. This method modifies the Windows Registry before using OEM GLVK keys, enabling an edition change outside the supported upgrade path, e.g., "Pro" to "Home," "Education Pro" or "Enterprise," or "Education" to "IoT Enterprise LTSC". Microsoft does not endorse this method. Use this method at your own risk. Please back up your system in advance.
 
--start a forced inplace-upgrade to keep all apps and settings. This method uses registry modifcations in combination with OEM-GLVK-keys. This allowes shenanigans like Pro to Home, Education Pro or Enterprise, or even something like Win10 Education to Win10 IoT Enterprise LTSC. This is of course unsupported by Microsoft. Create a backup and use at your own risk.
+Additional information (in German) can be found in `Inplace_Upgrade_Helper_readme.txt`
 
+Copy this tool to your installation media alongside `setup.exe` and run it.
 
-
-
-Additional information (in german) can be found in Inplace_Upgrade_Helper_readme.txt
-
-Simply copy this tool to your installation-media alongside setup.exe and run it.
 ![grafik](https://github.com/TheMMC/Inplace_Upgrade_Helper/assets/87301831/449e87d0-a146-45a2-a7e5-bd23d474f991)
 
-This is work in progress. This tool does NOT activate Windows, all keys are publically available OEM-GLVK-keys.
-This tool is german only at this point.
-Translation is ongoing. A Github-description with pictures and more information will follow after that.
+Please note:
 
+- This tool is a work in progress.
+- This tool **DOES NOT** activate Windows. Any product keys it uses are placeholder OEM GVLK keys.
+- This tool is currently available in German only. A translation is ongoing. Further documentation and pictures will follow after that.
+
+[1]: https://learn.microsoft.com/en-us/windows/deployment/upgrade/windows-edition-upgrades
