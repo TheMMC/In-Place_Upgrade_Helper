@@ -53,10 +53,12 @@ Alle Installationstests wurden mit de-de_windows_11_consumer_editions_version_23
 
 ACHTUNG:
 LTSC-Editionen sind NICHT in den normalen Installationsmedien enthalten. Um diese Funktion zu nutzen muss man sich selbst die passende ISO organisieren.
+Das selbe gilt natürlich auch für Server 2022.
 Windows 10 Enterprise LTSC 2021 (und IoT/N) wurden mit de-de_windows_10_enterprise_ltsc_2021_x64_dvd_71796d33.iso getestet.
 Fun fact: Die IoT bietet MS nur als englische Version an, man soll entweder ein Language-Pack nutzen oder ein fertig installiertes Nicht-Englisches-Nicht-IoT-LTSC per Key auf IoT upgraden.
 Benutzt man dieses Tool und/oder passt sich das Installationsmedium mit abbodi1406's create_virtual_editions.cmd an, erhält man trotzdem ein deutsches IoT Enterprise LTSC basierend auf offiziellen MS-Quelldateien.
 Der Vorinstallations-Key für LTSC 2024 ist zwar auch schon verfügbar (CGK42-GYN6Y-VD22B-BX98W-J8JXD), aber die Edition ist bisher nur eine geleakte technical preview evaluation. Erst nach Tests mit der Final wird der Key zu diesem Tool hinzugefügt.
+Auch Server 2025 ist noch nicht final, aber die Keys sind schon da (Standard DPNXD-67YY9-WWFJJ-RYH99-RM832, Datacenter CNFDQ-2BW8H-9V4WM-TKCPD-MD2QF).
 
 
 
