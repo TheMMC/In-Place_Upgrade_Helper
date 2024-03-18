@@ -18,6 +18,7 @@ This tool can upgrade Windows via four different methods:
 Additional information (in german) can be found in Inplace_Upgrade_Helper_readme.txt
 
 Simply copy this tool to your installation-media alongside setup.exe and run it.
+![grafik](https://github.com/TheMMC/Inplace_Upgrade_Helper/assets/87301831/449e87d0-a146-45a2-a7e5-bd23d474f991)
 
 This is work in progress. This tool does NOT activate Windows, all keys are publically available OEM-GLVK-keys.
 This tool is german only at this point.
