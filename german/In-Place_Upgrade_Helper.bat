@@ -18,11 +18,10 @@ SETLOCAL
 REM Automatisches Laden der Systemvariablen
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName') do set productname=%%j
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v EditionID') do set editionid=%%j
-for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductKey') do set productkey=%%j
 REM ‹berpr¸fen, ob die Variablen gesetzt wurden, und Standardwerte verwenden, wenn nicht
 if "%productname%"=="" set productname=Windows 10 Pro
 if "%editionid%"=="" set editionid=Professional
-if "%productkey%"=="" set productkey=VK7JG-NPHTM-C97JM-9MPGT-3V66T
+
 set "choice="
 set sourcespath=.
 
@@ -37,7 +36,7 @@ ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper fÅr Win10/11
 echo V0.60
 ECHO.
 echo.
-echo Derzeit ausgewÑhlt (Pro ist immer vorausgewÑhlt):
+echo Derzeit ausgewÑhlt:
 echo.
 echo EditionID: %editionid%
 echo.
@@ -45,7 +44,8 @@ echo ProductName: %productname%
 echo (auch bei Win11 wird in der Registry "Windows 10" angezeigt, das ist von MS selbst so gemacht)
 echo.
 echo OEM ProductKey: %productkey%
-echo (offizieller Key von Microsoft zum Vorinstallieren, nicht zum Aktivieren)
+echo (offizieller Key von Microsoft zum Vorinstallieren, nicht zum Aktivieren. Ist das Feld leer wurde die jetzige
+echo EditionID und ProductName aus dem laufenden System ausgelesen. Das passiert einmalig beim Start der Batch)
 echo.
 echo.
 echo 1) Windows Home                      11) Windows Home N
@@ -111,23 +111,27 @@ ECHO.
 goto mainmenu
 
 :keychange
+if "%productkey%"=="" goto nokeyselected
 echo Es wird versucht die Edition per simplen Keywechsel zu Ñndern...
 slmgr /ipk %productkey%
 goto mainmenu
 
 :runboringupgrade
+if "%productkey%"=="" goto nokeyselected
 echo.
 echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
 %sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable
 goto endofbatch
 
 :runupgrade
+if "%productkey%"=="" goto nokeyselected
 echo.
 echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
 %sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable /pkey %productkey%
 goto endofbatch
 
 :runforcedupgrade
+if "%productkey%"=="" goto nokeyselected
 echo.
 echo Erzwingt ein In-Place-Upgrade (Apps und Einstellungen bleiben erhalten) auf die ausgewÑhlte Version, indem in der Registry eine andere Version "vorgegaukelt" wird.
 echo Soll z.B. die Pro installiert werden, dann wird "ProductName" und "EditionID" in der Registy mit den Werten der Pro-Edition Åberschrieben.
@@ -159,6 +163,12 @@ echo Setup.exe und/oder Sources-Ordner nicht gefunden! Tool nicht zu den Install
 echo Versuche ein externes Installationmedium zu nutzen...
 set /p sourcespath=Bitte Pfad zum Installationsmedium (z.B. F:\ oder D:\entpackesISO\) eingeben: 
 goto premainmenu
+
+:nokeyselected
+echo Keine Edition mit Key ausgewÑhlt! Bitte erneut versuchen.
+echo.
+pause
+goto mainmenu
 
 REM Hier werden die verschiedenen Windows-Editionen definiert
 
