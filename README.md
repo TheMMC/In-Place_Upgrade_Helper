@@ -4,7 +4,7 @@ This is an upgrade-helper-tool for Win10/11
 This tool can upgrade Windows via four different methods:
 
 
--simple key-change with slmgr ( see https://learn.microsoft.com/en-us/windows/deployment/upgrade/windows-edition-upgrades for supported upgrade-paths)
+-simple key-change with slmgr ( see https://learn.microsoft.com/en-us/windows/deployment/upgrade/windows-edition-upgrades for supported upgrade-paths). This tool has all necessary OEM/GLVK-keys integrated, no need to search the MS knowledge base.
 
 -start setup.exe and let it choose the edition by itself. More or less just the normal inplace-upgrade.
 
