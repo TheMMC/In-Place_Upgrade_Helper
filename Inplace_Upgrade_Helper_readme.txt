@@ -43,13 +43,11 @@ Windows SE [Cloud] N						Windows Pro N
 (Nur auf einem eigenen Installationsmedium erhältlich:
 Windows 10 IoT Enterprise LTSC 2021				Windows 10 Enterprise LTSC 2021)
 
-Ein Wechsel zwischen N und Nicht-N-Editionen wurde nicht probiert, davon ist aber generell abzuraten und N-Editionen benutzt sowieso niemand.
 
-
-Im Umkehrschluss heißt das auch, das eure ISO nur Home, Home N, Pro und Pro N enthalten muss um sämtliche verfügbaren Editionen installieren zu können.
+Im Umkehrschluss heißt das auch, das eure ISO nur Home, Home N, Pro und Pro N enthalten muss um sämtliche verfügbaren Editionen (ohne LTSC) installieren zu können.
 Ein ganz normales Consumer-Installationsmedium erfüllt schon diese Anforderungen.
 Sprich: Eine Standard-ISO oder ein Standard-USB-Stick (https://www.microsoft.com/de-de/software-download/windows11) wird mit dieser Batch zu einem All-in-One-Installer.
-Im Moment unterstützt das Tool nur die normalen Versionen, keine N/K/China Editionen.
+Im Moment unterstützt das Tool nur die normalen Versionen, keine K/China Editionen.
 Alle Installationstests wurden mit de-de_windows_11_consumer_editions_version_23h2_updated_feb_2024_x64_dvd_9665512b.iso und einem MediaCreationTool Win11_23H2 USB-Stick als Basis gemacht.
 
 ACHTUNG:
