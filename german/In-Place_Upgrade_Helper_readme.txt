@@ -61,12 +61,17 @@ Der Vorinstallations-Key für LTSC 2024 ist zwar auch schon verfügbar (CGK42-GY
 
 
 Changelog:
+V0.70
+Danke an LizenzFass78851 für den Codeschnipsel zum auslesen der gerade laufenden Windows-Edition und der etwas sichereren Methode Adminrechte zu holen.
+Tekkie Boy aus dem Deskmodder-Forum hat noch einen Bug gemeldet, der den Registry-Eintrag CompositionEditionID betrifft. Das erzwungene Upgrade setzt jetzt auch diesen Eintrag.
+
 V0.60
 Readme Lesen scheint out zu sein, viele kopieren dieses Tool nicht in ein Installationsmedium sondern starten es einzeln und wundern sich dann über Fehler.
 Jetzt wird auf Vorhandensein von setup.exe und dem Ordner sources geprüft, wenn irgendetwas fehlt kann man jetzt auch externe Pfade als Installationsquelle angeben (z.B. ein gemountetes ISO).
 "Inplace" in "In-Place" geändert. Microsoft selbst spricht von "In-Place", "Inplace" macht auch im Englischen keinen Sinn.
 
 V0.50
+skycommand war so freundlich und hat mein Gossen-Englisch korrigiert und eine ordentliche readme.md gebaut, besten Dank dafür!
 Erwzungenes Upgrade ist jetzt kein Schalter mehr sondern ein eigener Menüpunkt.
 Einiges neu formatiert, das Menü sieht jetzt etwas übersichtlicher aus.
 Sollten sich keine Fehler eingeschlichen haben wird diese Version die Vorlage für die englische Übersetzung.

@@ -18,9 +18,11 @@ SETLOCAL
 REM Automatisches Laden der Systemvariablen
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName') do set productname=%%j
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v EditionID') do set editionid=%%j
+for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v CompositionEditionID') do set compositioneditionid=%%j
 REM ‹berpr¸fen, ob die Variablen gesetzt wurden, und Standardwerte verwenden, wenn nicht
 if "%productname%"=="" set productname=Windows 10 Pro
 if "%editionid%"=="" set editionid=Professional
+if "%compositioneditionid%"=="" set compositioneditionid=Enterprise
 
 set "choice="
 set sourcespath=.
@@ -33,7 +35,7 @@ if not exist "%sourcespath%"\sources\ goto nosetupfound
 cls
 ECHO.
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper fÅr Win10/11
-echo V0.60
+echo V0.70
 ECHO.
 echo.
 echo Derzeit ausgewÑhlt:
@@ -46,6 +48,9 @@ echo.
 echo OEM ProductKey: %productkey%
 echo (offizieller Key von Microsoft zum Vorinstallieren, nicht zum Aktivieren. Ist das Feld leer wurde die jetzige
 echo EditionID und ProductName aus dem laufenden System ausgelesen. Das passiert einmalig beim Start der Batch)
+echo.
+echo CompositionEditionID: %compositioneditionid%
+echo (Basis-Edition, worauf die eigentliche Edition technisch basiert)
 echo.
 echo.
 echo 1) Windows Home                      11) Windows Home N
@@ -151,8 +156,10 @@ echo.
 echo Setze Registry-EintrÑge...
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "EditionID" /t REG_SZ /d "%editionid%" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "ProductName" /t REG_SZ /d "%productname%" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "CompositionEditionID" /t REG_SZ /d "%compositioneditionid%" /f
 Reg.exe add "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion" /v "EditionID" /t REG_SZ /d "%editionid%" /f
 Reg.exe add "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion" /v "ProductName" /t REG_SZ /d "%productname%" /f
+Reg.exe add "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion" /v "CompositionEditionID" /t REG_SZ /d "%compositioneditionid%" /f
 echo.
 echo Setup und Hintergrundprozesse laufen, bitte warten. Dieses Fenster schlie·t danach automatisch.
 %sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable /pkey %productkey%
@@ -177,6 +184,7 @@ REM Windows Home
 set productkey=YTMG3-N6DKC-DKB77-7M9GH-8HVX7
 set editionid=Core
 set productname=Windows 10 Home
+set compositioneditionid=Core
 goto mainmenu
 
 REM Windows Pro
@@ -184,6 +192,7 @@ REM Windows Pro
 set productkey=VK7JG-NPHTM-C97JM-9MPGT-3V66T
 set editionid=Professional
 set productname=Windows 10 Pro
+set compositioneditionid=Enterprise
 goto mainmenu
 
 REM Windows Pro for Workstations
@@ -191,6 +200,7 @@ REM Windows Pro for Workstations
 set productkey=DXG7C-N36C4-C4HTG-X4T3X-2YV77
 set editionid=ProfessionalWorkstation
 set productname=Windows 10 Pro for Workstations
+set compositioneditionid=Enterprise
 goto mainmenu
 
 REM Windows Enterprise
@@ -198,6 +208,7 @@ REM Windows Enterprise
 set productkey=XGVPP-NMH47-7TTHJ-W3FW7-8HV2C
 set editionid=Enterprise
 set productname=Windows 10 Enterprise
+set compositioneditionid=Enterprise
 goto mainmenu
 
 REM Windows Pro Education
@@ -205,6 +216,7 @@ REM Windows Pro Education
 set productkey=8PTT6-RNW4C-6V7J2-C2D3X-MHBPB
 set editionid=ProfessionalEducation
 set productname=Windows 10 Pro Education
+set compositioneditionid=Enterprise
 goto mainmenu
 
 REM Windows Education
@@ -212,6 +224,7 @@ REM Windows Education
 set productkey=YNMGQ-8RYV3-4PGQ3-C8XTP-7CFBY
 set editionid=Education
 set productname=Windows 10 Education
+set compositioneditionid=Enterprise
 goto mainmenu
 
 REM Windows Enterprise multi-session / Virtual Desktops
@@ -219,6 +232,7 @@ REM Windows Enterprise multi-session / Virtual Desktops
 set productkey=CPWHC-NT2C7-VYW78-DHDB2-PG3GK
 set editionid=ServerRdsh
 set productname=Windows 10 Enterprise multi-session
+set compositioneditionid=Enterprise
 goto mainmenu
 
 REM Windows IoT Enterprise
@@ -226,6 +240,7 @@ REM Windows IoT Enterprise
 set productkey=XQQYW-NFFMW-XJPBH-K8732-CKFFD
 set editionid=IoTEnterprise
 set productname=Windows 10 IoT Enterprise
+set compositioneditionid=Enterprise
 goto mainmenu
 
 REM Windows Home Single Language
@@ -233,6 +248,7 @@ REM Windows Home Single Language
 set productkey=BT79Q-G7N6G-PGBYW-4YWX6-6F4BT
 set editionid=CoreSingleLanguage
 set productname=Windows 10 Home Single Language
+set compositioneditionid=Core
 goto mainmenu
 
 REM Windows SE CloudEdition
@@ -240,6 +256,7 @@ REM Windows SE CloudEdition
 set productkey=KY7PN-VR6RX-83W6Y-6DDYQ-T6R4W
 set editionid=CloudEdition
 set productname=Windows 10 SE
+set compositioneditionid=Enterprise
 goto mainmenu
 
 REM Windows Home N
@@ -247,6 +264,7 @@ REM Windows Home N
 set productkey=4CPRK-NM3K3-X6XXQ-RXX86-WXCHW
 set editionid=CoreN
 set productname=Windows 10 Home N
+set compositioneditionid=CoreN
 goto mainmenu
 
 REM Windows Pro N
@@ -254,6 +272,7 @@ REM Windows Pro N
 set productkey=2B87N-8KFHP-DKV6R-Y2C8J-PKCKT
 set editionid=ProfessionalN
 set productname=Windows 10 Pro N
+set compositioneditionid=EnterpriseN
 goto mainmenu
 
 REM Windows Pro N for Workstations
@@ -261,6 +280,7 @@ REM Windows Pro N for Workstations
 set productkey=WYPNQ-8C467-V2W6J-TX4WX-WT2RQ
 set editionid=ProfessionalWorkstationN
 set productname=Windows 10 Pro N for Workstations
+set compositioneditionid=EnterpriseN
 goto mainmenu
 
 REM Windows Pro Education N
@@ -268,6 +288,7 @@ REM Windows Pro Education N
 set productkey=GJTYN-HDMQY-FRR76-HVGC7-QPF8P
 set editionid=ProfessionalEducationN
 set productname=Windows 10 Pro Education N
+set compositioneditionid=EnterpriseN
 goto mainmenu
 
 REM Windows Education N
@@ -275,6 +296,7 @@ REM Windows Education N
 set productkey=84NGF-MHBT6-FXBX8-QWJK7-DRR8H
 set editionid=EducationN
 set productname=Windows 10 Education N
+set compositioneditionid=EnterpriseN
 goto mainmenu
 
 REM Windows Enterprise N
@@ -282,6 +304,7 @@ REM Windows Enterprise N
 set productkey=3V6Q6-NQXCX-V8YXR-9QCYV-QPFCT
 set editionid=EnterpriseN
 set productname=Windows 10 Enterprise N
+set compositioneditionid=EnterpriseN
 goto mainmenu
 
 REM Windows SE CloudEdition N
@@ -289,6 +312,7 @@ REM Windows SE CloudEdition N
 set productkey=K9VKN-3BGWV-Y624W-MCRMQ-BHDCD
 set editionid=CloudEditionN
 set productname=Windows 10 SE N
+set compositioneditionid=EnterpriseN
 goto mainmenu
 
 REM Windows 10 Enterprise LTSC 2021
@@ -296,6 +320,7 @@ REM Windows 10 Enterprise LTSC 2021
 set productkey=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
 set editionid=EnterpriseS
 set productname=Windows 10 Enterprise LTSC 2021
+set compositioneditionid=EnterpriseS
 goto mainmenu
 
 REM Windows 10 IoT Enterprise LTSC 2021
@@ -303,6 +328,7 @@ REM Windows 10 IoT Enterprise LTSC 2021
 set productkey=QPM6N-7J2WJ-P88HH-P3YRH-YY74H
 set editionid=IoTEnterpriseS
 set productname=Windows 10 IoT Enterprise LTSC 2021
+set compositioneditionid=EnterpriseS
 goto mainmenu
 
 REM Windows 10 Enterprise N LTSC 2021
@@ -310,6 +336,7 @@ REM Windows 10 Enterprise N LTSC 2021
 set productkey=2D7NQ-3MDXF-9WTDT-X9CCP-CKD8V
 set editionid=EnterpriseSN
 set productname=Windows 10 Enterprise N LTSC 2021
+set compositioneditionid=EnterpriseSN
 goto mainmenu
 
 :endofbatch
