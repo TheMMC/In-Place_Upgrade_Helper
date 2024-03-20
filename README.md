@@ -10,9 +10,10 @@ This tool can upgrade Windows via four different methods:
 
 - Starting a forced in-place upgrade to keep all apps and settings. This method modifies the Windows Registry before using OEM GLVK keys, enabling an edition change outside the supported upgrade path, e.g., "Pro" to "Home," "Education Pro" or "Enterprise," or "Education" to "IoT Enterprise LTSC". Microsoft does not endorse this method. Use this method at your own risk. Please back up your system in advance.
 
-Additional information (in German) can be found in `Inplace_Upgrade_Helper_readme.txt`
+Additional information can be found in `In-Place_Upgrade_Helper_readme.txt`
 
 Copy this tool to your installation media alongside `setup.exe` and run it.
+External installation files like a mounted ISO are supported, too.
 
 ![grafik](https://github.com/TheMMC/Inplace_Upgrade_Helper/assets/87301831/449e87d0-a146-45a2-a7e5-bd23d474f991)
 
@@ -20,6 +21,6 @@ Please note:
 
 - This tool is a work in progress.
 - This tool **DOES NOT** activate Windows. Any product keys it uses are placeholder OEM GVLK keys.
-- This tool is currently available in German only. A translation is ongoing. Further documentation and pictures will follow after that.
+- This tool is currently available in native German. English and Chinese are translations. Any help optimizing the translations is welcome. Further documentation and pictures will follow after that.
 
 [1]: https://learn.microsoft.com/en-us/windows/deployment/upgrade/windows-edition-upgrades
