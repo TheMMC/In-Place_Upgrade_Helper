@@ -13,7 +13,7 @@ This tool can upgrade Windows via four different methods:
 Additional information can be found in `In-Place_Upgrade_Helper_readme.txt`
 
 Copy this tool to your installation media alongside `setup.exe` and run it.
-External installation files like a mounted ISO are supported, too.
+External installation files, like a mounted ISO, are supported, too.
 
 ![grafik](https://github.com/TheMMC/Inplace_Upgrade_Helper/assets/87301831/449e87d0-a146-45a2-a7e5-bd23d474f991)
 
