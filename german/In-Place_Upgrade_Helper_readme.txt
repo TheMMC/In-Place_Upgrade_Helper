@@ -63,6 +63,10 @@ Auch Server 2025 ist noch nicht final, aber die Keys sind schon da (Standard DPN
 
 
 Changelog:
+v0.72
+Die Fenstergröße wird jetzt beim Start festgelegt. Auf einigen Systemen fehlte beim Start die Hälfte des Textes.
+Das Hauptmenü wurde etwas lesbarer gestaltet.
+
 V0.71
 Jetzt mit Server 2022
 

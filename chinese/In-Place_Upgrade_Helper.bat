@@ -15,6 +15,7 @@ if exist "%SYSTEMROOT%\System32\Cscript.exe" (
 if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs"
 pushd "%CD%" && CD /D "%~dp0"
 
+mode con:cols=170 lines=48
 cls
 SETLOCAL
 REM Automatic loading of system variables
@@ -35,24 +36,22 @@ if not exist "%sourcespath%"\sources\ goto nosetupfound
 
 :mainmenu
 cls
-ECHO.
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper for Win10/11
-echo V0.70
+echo V0.72
 ECHO.
 echo.
 echo 当前选择 Currently selected:
 echo.
 echo 版本ID EditionID: %editionid%
 echo.
-echo 产品名称 ProductName: %productname%
-@REM echo (even with Win11 "Windows 10" is displayed in the registry, this is what MS itself did)
-echo (即使在 Win11 中注册表依然显示 "Windows 10"，这就是微软自己做的。)
+if "%productkey%"=="" echo 产品名称 ProductName: %productname% (从注册表中读取)
+if not "%productkey%"=="" echo 产品名称 ProductName: %productname%
+@REM echo (Microsoft uses "Windows 10" for this registry key even if Windows 11 is installed)
+echo (即使安裝了 Windows 11，Microsoft 也會使用「Windows 10」作為此登錄項)
 echo.
 echo OEM产品密钥 OEM ProductKey: %productkey%
-@REM echo (official key from Microsoft for pre-installation, not for activation. If the field is empty, the current one was used
-@REM echo EditionID and ProductName read from the running system. This happens once when the batch starts)
-echo (官方的预安装密钥，不用于激活。如果这个字段为空，那么使用当前的密钥
-echo 当您启动此批处理文件时当前的 EditionID 和 ProductName 已经从运行的系统中读取了)
+@REM echo (official key from Microsoft for pre-installation, not for activation)
+echo (官方的预安装密钥，不用于激活)
 echo.
 echo 组合版本ID CompositionEditionID: %compositioneditionid%
 @REM echo (basic edition, on which the actual edition is technically based)
@@ -91,7 +90,7 @@ echo.
 echo 0) exit
 
 set "choice="
-set /p choice=Please make a selection:
+set /p choice=Please make a selection: 
 if '%choice%'=='1' goto setvarcore
 if '%choice%'=='2' goto setvarpro
 if '%choice%'=='3' goto setvarpfw
@@ -199,7 +198,7 @@ goto endofbatch
 echo Setup.exe 和/或 Sources 文件夹未找到！工具未复制到安装文件中？
 @REM echo Trying to use an external installation medium...
 echo 尝试使用外部安装媒介...
-set /p sourcespath=Please enter the path to the installation medium (e.g. F:\ or D:\unpackesISO\):
+set /p sourcespath=Please enter the path to the installation medium (e.g. F:\ or D:\unpackesISO\): 
 goto premainmenu
 
 :nokeyselected

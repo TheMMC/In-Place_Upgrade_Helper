@@ -15,6 +15,7 @@ if exist "%SYSTEMROOT%\System32\Cscript.exe" (
 if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs"
 pushd "%CD%" && CD /D "%~dp0"
 
+mode con:cols=170 lines=48
 cls
 SETLOCAL
 REM Automatisches Laden der Systemvariablen
@@ -35,21 +36,20 @@ if not exist "%sourcespath%"\sources\ goto nosetupfound
 
 :mainmenu
 cls
-ECHO.
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper fuer Win10/11
-echo V0.70
+echo V0.72
 ECHO.
 echo.
 echo Derzeit ausgewaehlt:
 echo.
 echo EditionID: %editionid%
 echo.
-echo ProductName: %productname%
-echo (auch bei Win11 wird in der Registry "Windows 10" angezeigt, das ist von MS selbst so gemacht)
+if "%productkey%"=="" echo ProductName: %productname% (aus Registry ausgelesen)
+if not "%productkey%"=="" echo ProductName: %productname%
+echo (Microsoft benutzt in der Registry "Windows 10", selbst wenn Windows 11 installiert ist)
 echo.
 echo OEM ProductKey: %productkey%
-echo (offizieller Key von Microsoft zum Vorinstallieren, nicht zum Aktivieren. Ist das Feld leer wurde die jetzige
-echo EditionID und ProductName aus dem laufenden System ausgelesen. Das passiert einmalig beim Start der Batch)
+echo (offizieller Key von Microsoft zum Vorinstallieren, nicht zum Aktivieren)
 echo.
 echo CompositionEditionID: %compositioneditionid%
 echo (Basis-Edition, worauf die eigentliche Edition technisch basiert)
@@ -176,7 +176,7 @@ set /p sourcespath=Bitte Pfad zum Installationsmedium (z.B. F:\ oder D:\entpacke
 goto premainmenu
 
 :nokeyselected
-echo Keine Edition mit Key ausgewaehlt! Bitte erneut versuchen.
+echo Bitte zuerst eine Edition mit Key ausgewaehlen!
 echo.
 pause
 goto mainmenu

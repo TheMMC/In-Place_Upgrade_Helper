@@ -15,6 +15,7 @@ if exist "%SYSTEMROOT%\System32\Cscript.exe" (
 if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs"
 pushd "%CD%" && CD /D "%~dp0"
 
+mode con:cols=170 lines=48
 cls
 SETLOCAL
 REM Automatic loading of system variables
@@ -35,21 +36,20 @@ if not exist "%sourcespath%"\sources\ goto nosetupfound
 
 :mainmenu
 cls
-ECHO.
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper for Win10/11
-echo V0.70
+echo V0.72
 ECHO.
 echo.
 echo Currently selected:
 echo.
 echo EditionID: %editionid%
 echo.
-echo ProductName: %productname%
-echo (even with Win11 "Windows 10" is displayed in the registry, this is what MS itself did)
+if "%productkey%"=="" echo ProductName: %productname% (read from registry)
+if not "%productkey%"=="" echo ProductName: %productname%
+echo (Microsoft uses "Windows 10" for this registry key even if Windows 11 is installed)
 echo.
 echo OEM ProductKey: %productkey%
-echo (official key from Microsoft for pre-installation, not for activation. If the field is empty, the current one was used
-echo EditionID and ProductName read from the running system. This happens once when the batch starts)
+echo (official key from Microsoft for pre-installation, not for activation)
 echo.
 echo CompositionEditionID: %compositioneditionid%
 echo (basic edition, on which the actual edition is technically based)
@@ -82,7 +82,7 @@ echo.
 echo 0) exit
 
 set "choice="
-set /p choice=Please make a selection:
+set /p choice=Please make a selection: 
 if '%choice%'=='1' goto setvarcore
 if '%choice%'=='2' goto setvarpro
 if '%choice%'=='3' goto setvarpfw
@@ -172,11 +172,11 @@ goto endofbatch
 :nosetupfound
 echo Setup.exe and/or Sources folder not found! Tool not copied to the installation files?
 echo Trying to use an external installation medium...
-set /p sourcespath=Please enter the path to the installation medium (e.g. F:\ or D:\unpackesISO\):
+set /p sourcespath=Please enter the path to the installation medium (e.g. F:\ or D:\unpackesISO\): 
 goto premainmenu
 
 :nokeyselected
-echo No edition with key selected! Please try again.
+echo Please select a Windows Edition first!
 echo.
 pause
 goto mainmenu

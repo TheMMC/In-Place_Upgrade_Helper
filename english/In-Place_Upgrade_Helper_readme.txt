@@ -63,6 +63,10 @@ Server 2025 is not yet final either, but the keys are already there (standard DP
 
 
 Changelog:
+V0.72
+Window size is now set at start. On some systems half of the text was missing at start.
+Main menu was made a little more legible.
+
 V0.71
 Now with Server 2022
 
