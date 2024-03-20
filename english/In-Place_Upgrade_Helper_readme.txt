@@ -86,7 +86,7 @@ Some things have been reformatted, the menu now looks a bit clearer.
 If there are no errors, this version will be the template for the English translation.
 
 V0.41
-Formatting fixed, the readme now looks neat on Gitgub and in the Windows editor.
+Formatting fixed, the readme now looks neat on GitHub and in the Windows editor.
 Added some comments to the batch.
 
 V0.40
