@@ -64,9 +64,9 @@ echo.
 echo Beliebige Taste druecken um verfuegbare Editionen auf dem Installationsmediums anzeigen zu lassen.
 pause>nul|set/p=&echo(
 echo Lese Installationsmedium, bitte warten...
-if exist "%sourcespath%\sources\install.wim" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.wim' | Select-Object -Property ImageName, ImageDescription, ImageIndex" &timeout 1 >nul
-if exist "%sourcespath%\sources\install.esd" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.esd' | Select-Object -Property ImageName, ImageDescription, ImageIndex" &timeout 1 >nul
-if exist "%sourcespath%\sources\install.swm" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.swm' | Select-Object -Property ImageName, ImageDescription, ImageIndex" &timeout 1 >nul
+if exist "%sourcespath%\sources\install.wim" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.wim' | Select-Object -Property ImageName, ImageDescription, ImageIndex"
+if exist "%sourcespath%\sources\install.esd" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.esd' | Select-Object -Property ImageName, ImageDescription, ImageIndex"
+if exist "%sourcespath%\sources\install.swm" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.swm' | Select-Object -Property ImageName, ImageDescription, ImageIndex"
 echo Beliebige Taste druecken um den In-Place-Upgrade-Helper zu starten.
 pause>nul|set/p=&echo(
 
