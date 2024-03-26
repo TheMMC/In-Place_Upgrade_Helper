@@ -13,7 +13,7 @@ You wanted to build an (almost) all-in-one installation medium without any tinke
 
 This tool helps.
 To find out exactly how it works, just take a look at the batch. This is not an activation tool, only official pre-installation keys are used.
-Simply copy this batch to the setup.exe in the installation medium and start it.
+Simply copy this batch to the setup.exe in the installation medium. Or start it by itself and enter the path of your installation files.
 
 If the appropriate version is not available on the installation medium, the setup is able to generate the appropriate image on the fly.
 Most likely this is the same function that DISM /Get-TargetEditions and DISM /Set-Edition use (https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/change-the-windows-image -to-a-higher-edition-using-dism?view=windows-11).
@@ -48,7 +48,7 @@ Windows 10 IoT Enterprise LTSC 2021 Windows 10 Enterprise LTSC 2021)
 Conversely, this also means that your ISO only needs to contain Home, Home N, Pro and Pro N in order to be able to install all available editions (without LTSC).
 A completely normal consumer installation medium already meets these requirements.
 In other words: A standard ISO or a standard USB stick (https://www.microsoft.com/de-de/software-download/windows11) becomes an all-in-one installer with this batch.
-At the moment the tool only supports the normal versions, not K/China editions.
+At the moment the tool does not support K/China editions.
 All installation tests were done with de-de_windows_11_consumer_editions_version_23h2_updated_feb_2024_x64_dvd_9665512b.iso and a MediaCreationTool Win11_23H2 USB stick as a basis.
 
 DANGER:
@@ -60,9 +60,12 @@ If you use this tool and/or adapt the installation medium with abbodi1406's crea
 The pre-installation key for LTSC 2024 is already available (CGK42-GYN6Y-VD22B-BX98W-J8JXD), but the edition is so far only a leaked technical preview evaluation. The key will only be added to this tool after testing with the final.
 Server 2025 is not yet final either, but the keys are already there (standard DPNXD-67YY9-WWFJJ-RYH99-RM832, data center CNFDQ-2BW8H-9V4WM-TKCPD-MD2QF).
 
-
+Upgrading between different languages is not possible. Forcing such an upgrade results in a broken Windows with missing settings, languages are mixed up etc.
 
 Changelog:
+v0.80
+Added a welcome screen with all available editions. After that editions available on the provided installation medium are displayed.
+
 V0.72
 Window size is now set at start. On some systems half of the text was missing at start.
 Main menu was made a little more legible.

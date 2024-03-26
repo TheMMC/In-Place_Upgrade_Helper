@@ -33,11 +33,48 @@ set sourcespath=.
 :premainmenu
 if not exist "%sourcespath%"\setup.exe goto nosetupfound
 if not exist "%sourcespath%"\sources\ goto nosetupfound
+echo Installation files found
+echo.
+echo If the chosen edition is not available on the installation medium, Windows setup can generate certain editions by itself.
+echo Upgrade chart:
+echo.
+echo Available edition for installation            required edition on installation medium
+echo.
+echo Windows Pro                                   Windows Pro
+echo Windows Pro for Workstations                  Windows Pro
+echo Windows Education                             Windows Pro
+echo Windows Pro Education                         Windows Pro
+echo Windows Enterprise                            Windows Pro
+echo Windows Enterprise multi-session              Windows Pro
+echo Windows IoT Enterprise                        Windows Pro
+echo Windows SE [Cloud] (Win11 only)               Windows Pro
+echo Windows Home                                  Windows Home
+echo Windows Home Single Language                  Windows Home
+echo Windows Pro N                                 Windows Pro N
+echo Windows Pro N for Workstations                Windows Pro N
+echo Windows Education N                           Windows Pro N
+echo Windows Pro Education N                       Windows Pro N
+echo Windows Enterprise N                          Windows Pro N
+echo Windows SE [Cloud] N (Win11 only)             Windows Pro N
+echo Windows 10 Enterprise LTSC 2021               Windows 10 Enterprise LTSC 2021
+echo Windows 10 IoT Enterprise LTSC 2021           Windows 10 Enterprise LTSC 2021
+echo Windows Server 2022 Standard                  Windows Server 2022 Standard
+echo Windows Server 2022 Datacenter                Windows Server 2022 Datacenter
+echo.
+echo Press any key to list available editions on the installation medium.
+pause>nul|set/p=&echo(
+echo Reading installation medium, please wait...
+if exist "%sourcespath%\sources\install.wim" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.wim' | Select-Object -Property ImageName, ImageDescription, ImageIndex" &timeout 1 >nul
+if exist "%sourcespath%\sources\install.esd" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.esd' | Select-Object -Property ImageName, ImageDescription, ImageIndex" &timeout 1 >nul
+if exist "%sourcespath%\sources\install.swm" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.swm' | Select-Object -Property ImageName, ImageDescription, ImageIndex" &timeout 1 >nul
+echo Press any key to start the In-Place-Upgrade-Helper.
+pause>nul|set/p=&echo(
+
 
 :mainmenu
 cls
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper for Win10/11
-echo V0.72
+echo V0.80
 ECHO.
 echo.
 echo Currently selected:
@@ -115,7 +152,7 @@ if '%choice%'=='f' goto runforcedupgrade
 if '%choice%'=='F' goto runforcedupgrade
 if '%choice%'=='0' goto endofbatch
 ECHO.
-ECHO "%choice%" was not found, please try again &ECHO. &pause
+ECHO "%choice%" was not found, press any key to try again.&ECHO. &pause>nul|set/p=&echo(
 ECHO.
 goto mainmenu
 
@@ -155,7 +192,7 @@ echo Are you sure you want to continue? Otherwise, cancel with CTRL+C or simply 
 echo.
 echo If you accidentally wrote the wrong edition into the registry, simply restart the forced in-place upgrade with the correct edition.
 echo.
-pause
+pause>nul|set/p=Press any key to continue.&echo(
 echo.
 echo Set registry entries...
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "EditionID" /t REG_SZ /d "%editionid%" /f
@@ -178,7 +215,7 @@ goto premainmenu
 :nokeyselected
 echo Please select a Windows Edition first!
 echo.
-pause
+pause>nul|set/p=Press any key to continue.&echo(
 goto mainmenu
 
 REM The different Windows editions are defined here

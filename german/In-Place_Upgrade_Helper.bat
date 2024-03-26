@@ -33,11 +33,48 @@ set sourcespath=.
 :premainmenu
 if not exist "%sourcespath%"\setup.exe goto nosetupfound
 if not exist "%sourcespath%"\sources\ goto nosetupfound
+echo Installationsdateien gefunden
+echo.
+echo Sollte die gewuenschte Windows Edition nicht im Installationsmedium enthalten sein, kann das Windows-Setup selbststaendig weitere Editionen generieren.
+echo Vollstaendige Installationsuebersicht:
+echo.
+echo Moegliche Edition zum Installieren            Benoetigte Edition im Installationsmedium
+echo.
+echo Windows Pro                                   Windows Pro
+echo Windows Pro for Workstations                  Windows Pro
+echo Windows Education                             Windows Pro
+echo Windows Pro Education                         Windows Pro
+echo Windows Enterprise                            Windows Pro
+echo Windows Enterprise multi-session              Windows Pro
+echo Windows IoT Enterprise                        Windows Pro
+echo Windows SE [Cloud] (Nur Win11)                Windows Pro
+echo Windows Home                                  Windows Home
+echo Windows Home Single Language                  Windows Home
+echo Windows Pro N                                 Windows Pro N
+echo Windows Pro N for Workstations                Windows Pro N
+echo Windows Education N                           Windows Pro N
+echo Windows Pro Education N                       Windows Pro N
+echo Windows Enterprise N                          Windows Pro N
+echo Windows SE [Cloud] N (Nur Win11)              Windows Pro N
+echo Windows 10 Enterprise LTSC 2021               Windows 10 Enterprise LTSC 2021
+echo Windows 10 IoT Enterprise LTSC 2021           Windows 10 Enterprise LTSC 2021
+echo Windows Server 2022 Standard                  Windows Server 2022 Standard
+echo Windows Server 2022 Datacenter                Windows Server 2022 Datacenter
+echo.
+echo Beliebige Taste druecken um verfuegbare Editionen auf dem Installationsmediums anzeigen zu lassen.
+pause>nul|set/p=&echo(
+echo Lese Installationsmedium, bitte warten...
+if exist "%sourcespath%\sources\install.wim" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.wim' | Select-Object -Property ImageName, ImageDescription, ImageIndex" &timeout 1 >nul
+if exist "%sourcespath%\sources\install.esd" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.esd' | Select-Object -Property ImageName, ImageDescription, ImageIndex" &timeout 1 >nul
+if exist "%sourcespath%\sources\install.swm" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.swm' | Select-Object -Property ImageName, ImageDescription, ImageIndex" &timeout 1 >nul
+echo Beliebige Taste druecken um den In-Place-Upgrade-Helper zu starten.
+pause>nul|set/p=&echo(
+
 
 :mainmenu
 cls
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper fuer Win10/11
-echo V0.72
+echo V0.80
 ECHO.
 echo.
 echo Derzeit ausgewaehlt:
@@ -115,7 +152,7 @@ if '%choice%'=='f' goto runforcedupgrade
 if '%choice%'=='F' goto runforcedupgrade
 if '%choice%'=='0' goto endofbatch
 ECHO.
-ECHO "%choice%" wurde nicht gefunden, bitte erneut versuchen &ECHO. &pause
+ECHO "%choice%" wurde nicht gefunden, beliebige Taste druecken um erneut zu versuchen.&ECHO. &pause>nul|set/p=&echo(
 ECHO.
 goto mainmenu
 
@@ -155,7 +192,7 @@ echo Wirklich fortfahren? Ansonsten mit STRG+C abbrechen oder einfach das Fenste
 echo.
 echo Sollte man aus Versehen eine falsche Edition in die Registry geschrieben haben, einfach das erzwungene In-Place-Upgrade mit der richtigen Edition erneut starten.
 echo.
-pause
+pause>nul|set/p=Eine beliebige Taste druecken um fortzufahren.&echo(
 echo.
 echo Setze Registry-Eintraege...
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "EditionID" /t REG_SZ /d "%editionid%" /f
@@ -178,7 +215,7 @@ goto premainmenu
 :nokeyselected
 echo Bitte zuerst eine Edition mit Key ausgewaehlen!
 echo.
-pause
+pause>nul|set/p=Eine beliebige Taste druecken um fortzufahren.&echo(
 goto mainmenu
 
 REM Hier werden die verschiedenen Windows-Editionen definiert

@@ -13,7 +13,7 @@ Ihr wollte ohne Bastelei und Modifikationen an der WIM ein (beinahe) All-In-One 
 
 Dieses Tool schafft Abhilfe.
 Für die genaue Funktionsweise einfach in die Batch reingucken. Dies ist kein Aktivierungstool, es werden ausschließlich offizielle Vorinstallations-Keys genutzt.
-Diese Batch einfach zu der setup.exe in das Installationsmedium kopieren und starten.
+Diese Batch einfach zu der setup.exe in das Installationsmedium kopieren oder einzeln starten und den Pfad zum Installationsmedium angeben.
 
 Sollte auf dem Installationsmedium die passende Version nicht vorhanden sein, ist das Setup in der Lage das passende Image on-the-fly zu generieren.
 Höchstwahrscheinlich ist das die selbe Funktion, die DISM /Get-TargetEditions und DISM /Set-Edition nutzt (https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/change-the-windows-image-to-a-higher-edition-using-dism?view=windows-11).
@@ -48,7 +48,7 @@ Windows 10 IoT Enterprise LTSC 2021				Windows 10 Enterprise LTSC 2021)
 Im Umkehrschluss heißt das auch, das eure ISO nur Home, Home N, Pro und Pro N enthalten muss um sämtliche verfügbaren Editionen (ohne LTSC) installieren zu können.
 Ein ganz normales Consumer-Installationsmedium erfüllt schon diese Anforderungen.
 Sprich: Eine Standard-ISO oder ein Standard-USB-Stick (https://www.microsoft.com/de-de/software-download/windows11) wird mit dieser Batch zu einem All-in-One-Installer.
-Im Moment unterstützt das Tool nur die normalen Versionen, keine K/China Editionen.
+Im Moment unterstützt das Tool keine K/China Editionen.
 Alle Installationstests wurden mit de-de_windows_11_consumer_editions_version_23h2_updated_feb_2024_x64_dvd_9665512b.iso und einem MediaCreationTool Win11_23H2 USB-Stick als Basis gemacht.
 
 ACHTUNG:
@@ -60,9 +60,12 @@ Benutzt man dieses Tool und/oder passt sich das Installationsmedium mit abbodi14
 Der Vorinstallations-Key für LTSC 2024 ist zwar auch schon verfügbar (CGK42-GYN6Y-VD22B-BX98W-J8JXD), aber die Edition ist bisher nur eine geleakte technical preview evaluation. Erst nach Tests mit der Final wird der Key zu diesem Tool hinzugefügt.
 Auch Server 2025 ist noch nicht final, aber die Keys sind schon da (Standard DPNXD-67YY9-WWFJJ-RYH99-RM832, Datacenter CNFDQ-2BW8H-9V4WM-TKCPD-MD2QF).
 
-
+Ein Upgrade zwischen verschiedenen Sprachversionen ist technisch nicht möglich, sollte man so etwas erzwingen ergibt das ein kaputtes Windows mit fehlenden Einstellungsseiten/Sprachmischmasch/etc.
 
 Changelog:
+v0.80
+Editionstabelle als Willkommensbildschirm hinzugefügt, danach werden dann noch die Editionen auf dem Installationsmedium angezeigt.
+
 v0.72
 Die Fenstergröße wird jetzt beim Start festgelegt. Auf einigen Systemen fehlte beim Start die Hälfte des Textes.
 Das Hauptmenü wurde etwas lesbarer gestaltet.
