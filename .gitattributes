@@ -1,7 +1,1 @@
-* text eol=auto
-
-*.{cmd,[cC][mM][dD]} -merge -text
-*.{bat,[bB][aA][tT]} -merge -text
-*.{ics,[iI][cC][sS]} -merge -text
-
-*.sh text eol=lf
+* -merge -text
