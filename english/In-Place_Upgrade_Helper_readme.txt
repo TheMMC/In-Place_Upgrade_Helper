@@ -63,6 +63,11 @@ Server 2025 is not yet final either, but the keys are already there (standard DP
 Upgrading between different languages is not possible. Forcing such an upgrade results in a broken Windows with missing settings, languages are mixed up etc.
 
 Changelog:
+v0.80 re-upload
+Github automatically changed the line endings from CRLF to LF without notification. That's the default setting for new repos. Too bad that Windows batches come in CRLF AND MIGHT BREAK IF YOU CONVERT THEM TO LF.
+Modified the attributes for the repository and re-uploaded the files with correct line endings.
+Huge thanks to Fox2k11 for reporting that. I hate Github.
+
 v0.80
 Added a welcome screen with all available editions. After that editions available on the provided installation medium are displayed.
 

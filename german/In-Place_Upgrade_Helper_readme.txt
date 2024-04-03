@@ -63,6 +63,11 @@ Auch Server 2025 ist noch nicht final, aber die Keys sind schon da (Standard DPN
 Ein Upgrade zwischen verschiedenen Sprachversionen ist technisch nicht möglich, sollte man so etwas erzwingen ergibt das ein kaputtes Windows mit fehlenden Einstellungsseiten/Sprachmischmasch/etc.
 
 Changelog:
+v0.80 Re-Upload
+Github hat selbstständig an den end-of-line-Zeichen rumgefummelt, konkret CRLF nach LF. Dumm nur, das Windows-Batches in CRLF daherkommen UND DADURCH AUCH GERNE MAL KAPUTT GEHEN.
+Eigenschaften des Repositories angepasst und die Dateien mit korrekter Formatierung neu hochgeladen.
+Großen Dank Fox2k11 für's Melden. Ich hasse Github.
+
 v0.80
 Editionstabelle als Willkommensbildschirm hinzugefügt, danach werden dann noch die Editionen auf dem Installationsmedium angezeigt.
 
