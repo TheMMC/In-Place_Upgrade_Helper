@@ -24,45 +24,56 @@ Das Setup wurde abgebrochen und jetzt mit einem Pro for Workstations-Key gestart
 Als nächster Test wurde die Enterprise mit einer Consumer-ISO (de-de_windows_11_consumer_editions...iso) installiert, die eigentlich gar keine Enterprise hat. Das Setup hat auch diese aus der Pro generiert, wenn man den passenden Key als Parameter nimmt.
 Alle Test wurden online durchgeführt.
 
-Somit ergibt sich folgende Tabelle:
+Das ergibt folgende Upgrade-Tabelle:
 
-Zusätzliche Edition						Erforderliche Edition
-Windows Home Single Language					Windows Home
-Windows Pro for Workstations					Windows Pro
-Windows Pro Education						Windows Pro
-Windows Education						Windows Pro
-Windows Enterprise						Windows Pro
-Windows Enterprise multi-session / Virtual Desktops		Windows Pro
-Windows IoT Enterprise						Windows Pro
-Windows SE [Cloud]						Windows Pro
-Windows Pro N for Workstations					Windows Pro N
-Windows Pro Education N						Windows Pro N
-Windows Education N						Windows Pro N
-Windows Enterprise N						Windows Pro N
-Windows SE [Cloud] N						Windows Pro N
+Moegliche Edition zum Installieren            Benoetigte Edition im Installationsmedium
 
-(Nur auf einem eigenen Installationsmedium erhältlich:
-Windows 10 IoT Enterprise LTSC 2021				Windows 10 Enterprise LTSC 2021)
+Windows Pro                                   Windows Pro
+Windows Pro for Workstations                  Windows Pro
+Windows Education                             Windows Pro
+Windows Pro Education                         Windows Pro
+Windows Enterprise                            Windows Pro
+Windows Enterprise multi-session              Windows Pro
+Windows IoT Enterprise                        Windows Pro
+Windows SE [Cloud] (Nur Win11)                Windows Pro
+Windows Home                                  Windows Home
+Windows Home Single Language                  Windows Home
+Windows Pro N                                 Windows Pro N
+Windows Pro N for Workstations                Windows Pro N
+Windows Education N                           Windows Pro N
+Windows Pro Education N                       Windows Pro N
+Windows Enterprise N                          Windows Pro N
+Windows SE [Cloud] N (Nur Win11)              Windows Pro N
+Windows 10 Enterprise LTSC 2021               Windows 10 Enterprise LTSC 2021
+Windows 10 Enterprise N LTSC 2021             Windows 10 Enterprise LTSC N 2021
+Windows 10 IoT Enterprise LTSC 2021           Windows 10 Enterprise LTSC 2021
+Windows 11 Enterprise LTSC 2024               Windows 11 Enterprise LTSC 2024
+Windows 11 Enterprise N LTSC 2024             Windows 11 Enterprise N LTSC 2024
+Windows 11 IoT Enterprise LTSC 2024           Windows 11 Enterprise LTSC 2024
+Windows 11 IoT Enterprise LTSC Subscr. 2024   Windows 11 Enterprise LTSC 2024
+Windows Server 2022 Standard                  Windows Server 2022 Standard
+Windows Server 2022 Datacenter                Windows Server 2022 Datacenter
+Windows Server 2025 Standard                  Windows Server 2025 Standard
+Windows Server 2025 Datacenter                Windows Server 2025 Datacenter
 
 
 Im Umkehrschluss heißt das auch, das eure ISO nur Home, Home N, Pro und Pro N enthalten muss um sämtliche verfügbaren Editionen (ohne LTSC) installieren zu können.
 Ein ganz normales Consumer-Installationsmedium erfüllt schon diese Anforderungen.
 Sprich: Eine Standard-ISO oder ein Standard-USB-Stick (https://www.microsoft.com/de-de/software-download/windows11) wird mit dieser Batch zu einem All-in-One-Installer.
-Im Moment unterstützt das Tool keine K/China Editionen.
+Im Moment unterstützt das Tool nicht die Home China Edition.
 Alle Installationstests wurden mit de-de_windows_11_consumer_editions_version_23h2_updated_feb_2024_x64_dvd_9665512b.iso und einem MediaCreationTool Win11_23H2 USB-Stick als Basis gemacht.
 
 ACHTUNG:
 LTSC-Editionen sind NICHT in den normalen Installationsmedien enthalten. Um diese Funktion zu nutzen muss man sich selbst die passende ISO organisieren.
 Das selbe gilt natürlich auch für Server 2022.
 Windows 10 Enterprise LTSC 2021 (und IoT/N) wurden mit de-de_windows_10_enterprise_ltsc_2021_x64_dvd_71796d33.iso getestet.
-Fun fact: Die IoT bietet MS nur als englische Version an, man soll entweder ein Language-Pack nutzen oder ein fertig installiertes Nicht-Englisches-Nicht-IoT-LTSC per Key auf IoT upgraden.
-Benutzt man dieses Tool und/oder passt sich das Installationsmedium mit abbodi1406's create_virtual_editions.cmd an, erhält man trotzdem ein deutsches IoT Enterprise LTSC basierend auf offiziellen MS-Quelldateien.
-Der Vorinstallations-Key für LTSC 2024 ist zwar auch schon verfügbar (CGK42-GYN6Y-VD22B-BX98W-J8JXD), aber die Edition ist bisher nur eine geleakte technical preview evaluation. Erst nach Tests mit der Final wird der Key zu diesem Tool hinzugefügt.
-Auch Server 2025 ist noch nicht final, aber die Keys sind schon da (Standard DPNXD-67YY9-WWFJJ-RYH99-RM832, Datacenter CNFDQ-2BW8H-9V4WM-TKCPD-MD2QF).
 
-Ein Upgrade zwischen verschiedenen Sprachversionen ist technisch nicht möglich, sollte man so etwas erzwingen ergibt das ein kaputtes Windows mit fehlenden Einstellungsseiten/Sprachmischmasch/etc.
 
 Changelog:
+v0.90
+LTSC 2024 und Server 2025 hinzugefügt. Design optimiert (hoffe ich, ich bin schlecht in sowas).
+Chinesische Übersetzung entfernt, ich kann nicht supporten, was ich nicht mal ansatzweise verstehe...
+
 v0.80 Re-Upload
 Github hat selbstständig an den end-of-line-Zeichen rumgefummelt, konkret CRLF nach LF. Dumm nur, das Windows-Batches in CRLF daherkommen UND DADURCH AUCH GERNE MAL KAPUTT GEHEN.
 Eigenschaften des Repositories angepasst und die Dateien mit korrekter Formatierung neu hochgeladen.

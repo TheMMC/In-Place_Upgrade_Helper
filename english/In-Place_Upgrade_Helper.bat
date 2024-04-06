@@ -15,8 +15,16 @@ if exist "%SYSTEMROOT%\System32\Cscript.exe" (
 if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs"
 pushd "%CD%" && CD /D "%~dp0"
 
-mode con:cols=170 lines=48
+if not defined iammaximized (
+    set iammaximized=1
+    start /max "" "%0" "%*"
+    exit
+)
+
 cls
+Echo If this windows is not maximized please change the size manually.
+echo This is a know bug in Windows Terminal.
+echo.
 SETLOCAL
 REM Automatic loading of system variables
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName') do set productname=%%j
@@ -57,16 +65,24 @@ echo Windows Pro Education N                       Windows Pro N
 echo Windows Enterprise N                          Windows Pro N
 echo Windows SE [Cloud] N (Win11 only)             Windows Pro N
 echo Windows 10 Enterprise LTSC 2021               Windows 10 Enterprise LTSC 2021
+echo Windows 10 Enterprise N LTSC 2021             Windows 10 Enterprise LTSC N 2021
 echo Windows 10 IoT Enterprise LTSC 2021           Windows 10 Enterprise LTSC 2021
+echo Windows 11 Enterprise LTSC 2024               Windows 11 Enterprise LTSC 2024
+echo Windows 11 Enterprise N LTSC 2024             Windows 11 Enterprise N LTSC 2024
+echo Windows 11 IoT Enterprise LTSC 2024           Windows 11 Enterprise LTSC 2024
+echo Windows 11 IoT Enterprise LTSC Subscr. 2024   Windows 11 Enterprise LTSC 2024
 echo Windows Server 2022 Standard                  Windows Server 2022 Standard
 echo Windows Server 2022 Datacenter                Windows Server 2022 Datacenter
+echo Windows Server 2025 Standard                  Windows Server 2025 Standard
+echo Windows Server 2025 Datacenter                Windows Server 2025 Datacenter
+
 echo.
 echo Press any key to list available editions on the installation medium.
 pause>nul|set/p=&echo(
 echo Reading installation medium, please wait...
-if exist "%sourcespath%\sources\install.wim" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.wim' | Select-Object -Property ImageName, ImageDescription, ImageIndex"
-if exist "%sourcespath%\sources\install.esd" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.esd' | Select-Object -Property ImageName, ImageDescription, ImageIndex"
-if exist "%sourcespath%\sources\install.swm" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.swm' | Select-Object -Property ImageName, ImageDescription, ImageIndex"
+if exist "%sourcespath%\sources\install.wim" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.wim' | Select-Object -Property ImageName, ImageIndex"
+if exist "%sourcespath%\sources\install.esd" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.esd' | Select-Object -Property ImageName, ImageIndex"
+if exist "%sourcespath%\sources\install.swm" powershell -ExecutionPolicy Bypass -Command "Get-WindowsImage -ImagePath '%sourcespath%\sources\install.swm' | Select-Object -Property ImageName, ImageIndex"
 echo Press any key to start the In-Place-Upgrade-Helper.
 pause>nul|set/p=&echo(
 
@@ -74,48 +90,44 @@ pause>nul|set/p=&echo(
 :mainmenu
 cls
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper for Win10/11
-echo V0.80
-ECHO.
+echo V0.90
 echo.
 echo Currently selected:
 echo.
-echo EditionID: %editionid%
+echo EditionID: [92m%editionid%[0m
+if "%productkey%"=="" echo ProductName: [92m%productname%[0m [93m(read from registry)[0m
+if not "%productkey%"=="" echo ProductName: [92m%productname%[0m
+echo (The registry key always shows "Windows 10" even if Windows 11 is installed)
+if "%productkey%"=="" echo OEM ProductKey: [93mNo edition selected[0m
+if not "%productkey%"=="" echo OEM ProductKey: [92m%productkey%[0m
+echo (Official key from Microsoft for pre-installation, not for activation)
+echo CompositionEditionID: [92m%compositioneditionid%[0m
+echo (Base edition, on which the actual edition is technically derived from)
 echo.
-if "%productkey%"=="" echo ProductName: %productname% (read from registry)
-if not "%productkey%"=="" echo ProductName: %productname%
-echo (Microsoft uses "Windows 10" for this registry key even if Windows 11 is installed)
-echo.
-echo OEM ProductKey: %productkey%
-echo (official key from Microsoft for pre-installation, not for activation)
-echo.
-echo CompositionEditionID: %compositioneditionid%
-echo (basic edition, on which the actual edition is technically based)
-echo.
-echo.
-echo 1) Windows Home                          11) Windows Home N
-echo 2) Windows Pro                           12) Windows Pro N
-echo 3) Windows Pro for Workstations          13) Windows Pro N for Workstations
-echo 4) Windows Enterprise                    14) Windows Pro Education N
-echo 5) Windows Pro Education                 15) Windows Education N
-echo 6) Windows Education                     16) Windows Enterprise N
-echo 7) Windows Enterprise multi-session      17) Windows 11 SE CloudEdition N
-echo 8) Windows IoT Enterprise
+echo Standard editions:
+echo 1) Windows Home                          10) Windows 11 SE CloudEdition
+echo 2) Windows Pro                           11) Windows Home N
+echo 3) Windows Pro for Workstations          12) Windows Pro N
+echo 4) Windows Enterprise                    13) Windows Pro N for Workstations
+echo 5) Windows Pro Education                 14) Windows Pro Education N
+echo 6) Windows Education                     15) Windows Education N
+echo 7) Windows Enterprise multi-session      16) Windows Enterprise N
+echo 8) Windows IoT Enterprise                17) Windows 11 SE CloudEdition N
 echo 9) Windows Home Single Language
-echo 10) Windows 11 SE CloudEdition
+echo LTSC:
+echo 18) Windows 10 Enterprise LTSC 2021      22) Windows 11 IoT Enterprise LTSC 2024
+echo 19) Windows 10 IoT Enterprise LTSC 2021  23) Windows 11 Enterprise N LTSC 2024
+echo 20) Windows 10 Enterprise N LTSC 2021    24) Windows 11 IoT Enterprise LTSC Subscription 2024
+echo 21) Windows 11 Enterprise LTSC 2024
+echo Server:
+echo 25) Windows Server 2022 Standard         27) Windows Server 2025 Standard
+echo 26) Windows Server 2022 Datacenter       28) Windows Server 2025 Datacenter
 echo.
-echo special editions, only available on separate installation media:
-echo 18) Windows 10 Enterprise LTSC 2021      21) Windows Server 2022 Standard
-echo 19) Windows 10 IoT Enterprise LTSC 2021  22) Windows Server 2022 Datacenter
-echo 20) Windows 10 Enterprise N LTSC 2021    
+echo k) Method 1 - Try to install the selected key with slmgr (simple edition change without in-place upgrade)
+echo s) Method 2 - Start upgrade without selecting edition, setup decides alone. Equivalent to a normal in-place upgrade
+echo u) Method 3 - Start upgrade to the selected edition. The appropriate pre-installation key is used for the setup
+echo f) Method 4 - Start FORCED upgrade to the selected edition. The appropriate pre-installation key is used for the setup
 echo.
-echo.
-echo k) Method 1) Try to install the selected key with slmgr (simple edition change without in-place upgrade)
-echo s) Method 2) Start upgrade without selecting edition, setup decides alone. Equivalent to a normal in-place upgrade
-echo u) Method 3) Start upgrade to the selected edition. The appropriate pre-installation key is used for the setup
-echo f) Method 4) Start FORCED upgrade to the selected edition. The appropriate pre-installation key is used for the setup
-echo.
-echo.
-
 echo 0) exit
 
 set "choice="
@@ -140,8 +152,14 @@ if '%choice%'=='17' goto setvarcloudn
 if '%choice%'=='18' goto setvarltsc2021
 if '%choice%'=='19' goto setvariotltsc2021
 if '%choice%'=='20' goto setvarltscn2021
-if '%choice%'=='21' goto setvarserv22std
-if '%choice%'=='22' goto setvarserv22data
+if '%choice%'=='21' goto setvarltscn2024
+if '%choice%'=='22' goto setvariotltsc2024
+if '%choice%'=='23' goto setvarltscn2024
+if '%choice%'=='24' goto setvariotltscsub2024
+if '%choice%'=='25' goto setvarserv22std
+if '%choice%'=='26' goto setvarserv22data
+if '%choice%'=='27' goto setvarserv25std
+if '%choice%'=='28' goto setvarserv25data
 if '%choice%'=='u' goto runupgrade
 if '%choice%'=='U' goto runupgrade
 if '%choice%'=='k' goto keychange
@@ -158,12 +176,11 @@ goto mainmenu
 
 :keychange
 if "%productkey%"=="" goto nokeyselected
-echo An attempt is made to change the edition by simply changing the key...
+echo Attempting to change the edition by simply changing the key...
 slmgr /ipk %productkey%
 goto mainmenu
 
 :runboringupgrade
-if "%productkey%"=="" goto nokeyselected
 echo.
 echo Setup and background processes are running, please wait. This window then closes automatically.
 %sourcespath%\setup.exe /eula accept /telemetry disable /priority normal /resizerecoverypartition enable
@@ -180,21 +197,21 @@ goto endofbatch
 if "%productkey%"=="" goto nokeyselected
 echo.
 echo Forces an in-place upgrade (apps and settings are retained) to the selected version by "faking" a different version in the registry.
-echo If, for example, Pro is to be installed, then "ProductName" and "EditionID" in the registry will be overwritten with the values ??of the Pro edition.
+echo If, for example, Pro is to be installed, then "ProductName" and "EditionID" in the registry will be overwritten with the values of the Pro edition.
 echo Setup then thinks the Pro is already installed and continues with the in-place upgrade.
 echo This is how you can do an in-place upgrade that is not in the official upgrade path, e.g. downgrades from Pro to Home.
-echo But upgrade paths that are blocked for licensing reasons, such as Home directly to Enterprise, can also be unlocked with this.
-echo Or even very creative things like Win10 Edu work on Win10 IoT Enterprise LTSC.
+echo Even upgrade paths that are blocked for licensing reasons, such as Home directly to Enterprise, can be unlocked with this.
+echo Or even more creative things like Win10 Edu to Win10 IoT Enterprise LTSC are possible.
 echo.
 echo This is of course completely unsupported by Microsoft, use at your own risk.
-However, no problems have occurred so far, everything behaves like a normal in-place upgrade.
-echo Are you sure you want to continue? Otherwise, cancel with CTRL+C or simply close the window.
-echo.
+echo However, no problems have occurred so far, everything behaves like a normal in-place upgrade.
 echo If you accidentally wrote the wrong edition into the registry, simply restart the forced in-place upgrade with the correct edition.
+echo.
+echo Are you sure you want to continue? Otherwise close this window now!
 echo.
 pause>nul|set/p=Press any key to continue.&echo(
 echo.
-echo Set registry entries...
+echo Setting registry entries...
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "EditionID" /t REG_SZ /d "%editionid%" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "ProductName" /t REG_SZ /d "%productname%" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v "CompositionEditionID" /t REG_SZ /d "%compositioneditionid%" /f
@@ -380,6 +397,38 @@ set productname=Windows 10 Enterprise N LTSC 2021
 set compositioneditionid=EnterpriseSN
 goto mainmenu
 
+REM Windows 11 Enterprise LTSC 2024
+:setvarltsc2024
+set productkey=M7XTQ-FN8P6-TTKYV-9D4CC-J462D
+set editionid=EnterpriseS
+set productname=Windows 10 Enterprise LTSC 2024
+set compositioneditionid=EnterpriseS
+goto mainmenu
+
+REM Windows 11 IoT Enterprise LTSC 2024
+:setvariotltsc2024
+set productkey=KBN8V-HFGQ4-MGXVD-347P6-PDQGT
+set editionid=IoTEnterpriseS
+set productname=Windows 10 IoT Enterprise LTSC 2024
+set compositioneditionid=EnterpriseS
+goto mainmenu
+
+REM Windows 11 Enterprise N LTSC 2024
+:setvarltscn2024
+set productkey=92NFX-8DJQP-P6BBQ-THF9C-7CG2H
+set editionid=EnterpriseSN
+set productname=Windows 10 Enterprise N LTSC 2024
+set compositioneditionid=EnterpriseSN
+goto mainmenu
+
+REM Windows 11 IoT Enterprise LTSC Subscription 2024
+:setvariotltscsub2024
+set productkey=N979K-XWD77-YW3GB-HBGH6-D32MH
+set editionid=IoTEnterpriseSK
+set productname=Windows 10 IoT Enterprise Subscription LTSC 2024
+set compositioneditionid=EnterpriseS
+goto mainmenu
+
 REM Windows Server 2022 Standard / Standard with desktop experience
 :setvarserv22std
 set productkey=VDYBN-27WPP-V4HQT-9VMD4-VMK7H
@@ -393,6 +442,22 @@ REM Windows Server 2022 Datacenter / Datacenter with desktop experience
 set productkey=WX4NM-KYWYW-QJJR4-XV3QB-6VM33
 set editionid=ServerDatacenter
 set productname=Windows Server 2022 Datacenter
+set compositioneditionid=ServerDatacenter
+goto mainmenu
+
+REM Windows Server 2025 Standard / Standard with desktop experience
+:setvarserv25std
+set productkey=DPNXD-67YY9-WWFJJ-RYH99-RM832
+set editionid=ServerStandard
+set productname=Windows Server 2025 Standard
+set compositioneditionid=ServerStandard
+goto mainmenu
+
+REM Windows Server 2025 Datacenter / Datacenter with desktop experience
+:setvarserv25data
+set productkey=CNFDQ-2BW8H-9V4WM-TKCPD-MD2QF
+set editionid=ServerDatacenter
+set productname=Windows Server 2025 Datacenter
 set compositioneditionid=ServerDatacenter
 goto mainmenu
 
