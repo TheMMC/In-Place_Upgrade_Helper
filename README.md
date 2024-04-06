@@ -1,4 +1,4 @@
-This is an upgrade helper tool for Windows 10 and 11 and Windows Server.
+This is an upgrade helper tool for Windows 10/11 and Windows Server.
 
 This tool can upgrade Windows via four different methods:
 
@@ -26,6 +26,6 @@ Please note:
 
 - This tool is a work in progress.
 - This tool **DOES NOT** activate Windows. Any product keys it uses are placeholder OEM GVLK keys.
-- This tool is currently available in native German. English is a translations. Any help optimizing the translation is welcome.
+- This tool is currently available in native German. English is a translation. Any help optimizing the translation is welcome.
 
 [1]: https://learn.microsoft.com/en-us/windows/deployment/upgrade/windows-edition-upgrades
