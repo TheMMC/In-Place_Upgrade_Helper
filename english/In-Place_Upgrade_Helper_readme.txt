@@ -70,6 +70,9 @@ Windows 10 Enterprise LTSC 2021 (and IoT/N) were tested with de-de_windows_10_en
 
 
 Changelog:
+v0.91
+Small changes to the main menu.
+
 v0.90
 Added LTSC 2024 and Server 2025. Optimized the visual design (I hope, I'm bad at that).
 Removed chinese translation, I can't support what I can't understand...

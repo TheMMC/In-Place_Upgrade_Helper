@@ -90,14 +90,14 @@ pause>nul|set/p=&echo(
 :mainmenu
 cls
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper for Win10/11
-echo V0.90
+echo V0.91
 echo.
-echo Currently selected:
+echo Enter the number of your desired edition, press enter, choose an upgrade method, then press enter again.
 echo.
-echo EditionID: [92m%editionid%[0m
 if "%productkey%"=="" echo ProductName: [92m%productname%[0m [93m(read from registry)[0m
 if not "%productkey%"=="" echo ProductName: [92m%productname%[0m
 echo (The registry key always shows "Windows 10" even if Windows 11 is installed)
+echo EditionID: [92m%editionid%[0m
 if "%productkey%"=="" echo OEM ProductKey: [93mNo edition selected[0m
 if not "%productkey%"=="" echo OEM ProductKey: [92m%productkey%[0m
 echo (Official key from Microsoft for pre-installation, not for activation)

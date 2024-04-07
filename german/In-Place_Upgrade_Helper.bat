@@ -90,14 +90,14 @@ pause>nul|set/p=&echo(
 :mainmenu
 cls
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper fuer Win10/11
-echo V0.90
+echo V0.91
 echo.
-echo Derzeit ausgewaehlt:
+echo Nummer der gewuenschten Edition auswaehlen, Enter druecken, Upgrade-Methode auswaehlen, dann noch einmal Enter druecken.
 echo.
-echo EditionID: [92m%editionid%[0m
 if "%productkey%"=="" echo ProductName: [92m%productname%[0m [93m(aus Registry ausgelesen)[0m
 if not "%productkey%"=="" echo ProductName: [92m%productname%[0m
 echo (In der Registry steht immer "Windows 10", selbst wenn Windows 11 installiert ist)
+echo EditionID: [92m%editionid%[0m
 if "%productkey%"=="" echo OEM ProductKey: [93mNoch keine Edition ausgewaehlt[0m
 if not "%productkey%"=="" echo OEM ProductKey: [92m%productkey%[0m
 echo (offizieller Key von Microsoft zum Vorinstallieren, nicht zum Aktivieren)
