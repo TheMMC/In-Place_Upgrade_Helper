@@ -1,1 +1,21 @@
-* -merge -text
+# Set CRLF for Windows specific script files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.cmdt text eol=crlf
+*.vbs text eol=crlf
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+*.txt text eol=crlf
+*.new text eol=crlf
+*.au3 text eol=crlf
+*.reg text eol=crlf
+*.csv text eol=crlf
+*.cpp text eol=crlf
+*.xsl text eol=crlf
+
+# Set LF for Linux specific script files
+*.sh text eol=lf
+*.bash text eol=lf
+
+# All other files on Auto
+* text=auto
