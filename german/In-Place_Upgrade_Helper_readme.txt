@@ -65,8 +65,15 @@ Alle Installationstests wurden mit de-de_windows_11_consumer_editions_version_23
 
 ACHTUNG:
 LTSC-Editionen sind NICHT in den normalen Installationsmedien enthalten. Um diese Funktion zu nutzen muss man sich selbst die passende ISO organisieren.
-Das selbe gilt natürlich auch für Server 2022.
+Das selbe gilt natürlich auch für Server 2022/2025.
 Windows 10 Enterprise LTSC 2021 (und IoT/N) wurden mit de-de_windows_10_enterprise_ltsc_2021_x64_dvd_71796d33.iso getestet.
+
+BONUS:
+Im Ordner "[optional]" findet sich noch eine Datei, die in das Installationsmediums kopiert werden kann. Einfach in den "sources"-Ordner kopieren.
+Bootet man dann vom Installationsmedium, erzwingt die EI.CFG bei Neuinstallationen das Editionsauswahl-Menü, auch wenn eine Lizenz in der Firmware gefunden wurde. Nützlich um z.B. die Enterprise zu installieren, wenn eigentlicht die Home vorinstalliert war und das Setup immer automatisch die Home installiert.
+Hier werden aber nur die tatsächlich auf dem Installationmedium verfügbaren Editionen angezeigt. Das generieren von zusätzlichen Editionen ist ausschließlich dem In-Place-Upgrade vorbehalten.
+
+Keine autounattend.xml oder andere Sachen für eine automatische Installation benutzen, das stört die Funktion dieses Tools!
 
 
 Changelog:

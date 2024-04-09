@@ -64,9 +64,16 @@ At the moment the tool does not support the Home China edition.
 All installation tests were done with de-de_windows_11_consumer_editions_version_23h2_updated_feb_2024_x64_dvd_9665512b.iso and an USB Stick created with MediaCreationTool Win11_23H2 as a base.
 
 DANGER:
-LTSC editions are NOT included in the normal installation media. To use this function you have to organize the appropriate ISO yourself.
+LTSC editions are NOT included in the normal installation media. To use this editions you have to get the appropriate ISO yourself.
 The same of course also applies to Server 2022/2025.
 Windows 10 Enterprise LTSC 2021 (and IoT/N) were tested with de-de_windows_10_enterprise_ltsc_2021_x64_dvd_71796d33.iso.
+
+BONUS:
+The folder "[optional]" contains a file that can be used to modify your installation medium for clean installations. Just copy EI.CFG to the sources folder.
+If you boot from the installation medium the EI.CFG enforces the setup to let you choose your edition for a clean installation, even if a license is found in the firmware. For example this can be useful to install Enterprise on a PC that came pre-installed with Home.
+While doing a clean install only the actually existing editions on the installation medium are shown, not the edition that can be generated. Generating addition edtions is only possible with an in-place-upgrade.
+
+Also don't use an autounattend.xml or any other installation automation, this will break this tool!
 
 
 Changelog:
