@@ -69,14 +69,18 @@ The same of course also applies to Server 2022/2025.
 Windows 10 Enterprise LTSC 2021 (and IoT/N) were tested with de-de_windows_10_enterprise_ltsc_2021_x64_dvd_71796d33.iso.
 
 BONUS:
-The folder "[optional]" contains a file that can be used to modify your installation medium for clean installations. Just copy EI.CFG to the sources folder.
-If you boot from the installation medium the EI.CFG enforces the setup to let you choose your edition for a clean installation, even if a license is found in the firmware. For example this can be useful to install Enterprise on a PC that came pre-installed with Home.
-While doing a clean install only the actually existing editions on the installation medium are shown, not the edition that can be generated. Generating addition edtions is only possible with an in-place-upgrade.
+The folder "[optional_install_media_mods]" contains a script to deactivate any installation requirements like TPM or secure boot.
+Additional info for EI.CFG: While doing a clean install only the actually existing editions on the installation medium are shown, not the edition that can be generated. Generating addition edtions is only possible with an in-place-upgrade.
 
-Also don't use an autounattend.xml or any other installation automation, this will break this tool!
+ONLY sources\$OEM$\$$\Panther\unattend.xml IS SUPPORTED!
+autounattend.xml in root folder or similar breaks In-Place_Upgrade_Helper.bat!
 
 
 Changelog:
+v0.92
+Did some tests with unattend.xml and autounattend.xml. Anything besides sources\$OEM$\$$\Panther\ breaks this tool, and that gave me some problems with some TPM-requirement workarounds...
+So I wrote a small extra script to modify the Windows installation files. Obviously this only works with extracted ISOs and USB-sticks, not mounted ISOs.
+
 v0.91
 Small changes to the main menu.
 

@@ -90,7 +90,7 @@ pause>nul|set/p=&echo(
 :mainmenu
 cls
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper for Win10/11
-echo V0.91
+echo V0.92
 echo.
 echo Enter the number of your desired edition, press enter, choose an upgrade method, then press enter again.
 echo.
@@ -226,7 +226,7 @@ goto endofbatch
 :nosetupfound
 echo Setup.exe and/or Sources folder not found! Tool not copied to the installation files?
 echo Trying to use an external installation medium...
-set /p sourcespath=Please enter the path to the installation medium (e.g. F:\ or D:\unpackesISO\): 
+set /p sourcespath=Please enter the path to the installation medium (e.g. F:\ or D:\unpackedISO\): 
 goto premainmenu
 
 :nokeyselected

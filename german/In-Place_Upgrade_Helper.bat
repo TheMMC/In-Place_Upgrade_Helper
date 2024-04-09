@@ -90,7 +90,7 @@ pause>nul|set/p=&echo(
 :mainmenu
 cls
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper fuer Win10/11
-echo V0.91
+echo V0.92
 echo.
 echo Nummer der gewuenschten Edition auswaehlen, Enter druecken, Upgrade-Methode auswaehlen, dann noch einmal Enter druecken.
 echo.

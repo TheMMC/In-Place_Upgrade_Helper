@@ -69,14 +69,18 @@ Das selbe gilt natürlich auch für Server 2022/2025.
 Windows 10 Enterprise LTSC 2021 (und IoT/N) wurden mit de-de_windows_10_enterprise_ltsc_2021_x64_dvd_71796d33.iso getestet.
 
 BONUS:
-Im Ordner "[optional]" findet sich noch eine Datei, die in das Installationsmediums kopiert werden kann. Einfach in den "sources"-Ordner kopieren.
-Bootet man dann vom Installationsmedium, erzwingt die EI.CFG bei Neuinstallationen das Editionsauswahl-Menü, auch wenn eine Lizenz in der Firmware gefunden wurde. Nützlich um z.B. die Enterprise zu installieren, wenn eigentlicht die Home vorinstalliert war und das Setup immer automatisch die Home installiert.
-Hier werden aber nur die tatsächlich auf dem Installationmedium verfügbaren Editionen angezeigt. Das generieren von zusätzlichen Editionen ist ausschließlich dem In-Place-Upgrade vorbehalten.
+Im Ordner "[optional_install_media_mods]" befindet sich noch ein Script um eventuelle Installationsbeschränkungen wie TPM oder secure boot zu umgehen.
+Hinweis zur EI.CFG: Hier werden bei einer Neuinstallation nur die tatsächlich auf dem Installationmedium verfügbaren Editionen angezeigt. Das generieren von zusätzlichen Editionen ist ausschließlich dem In-Place-Upgrade vorbehalten.
 
-Keine autounattend.xml oder andere Sachen für eine automatische Installation benutzen, das stört die Funktion dieses Tools!
+NUR sources\$OEM$\$$\Panther\unattend.xml WIRD UNTERSTUETZT!
+autounattend.xml im root Ordner oder Aehnliches blockiert In-Place_Upgrade_Helper.bat!
 
 
 Changelog:
+v0.92
+Mehrere Tests mit unattend.xml und autounattend.xml durchgeführt. Alles außer sources\$OEM$\$$\Panther\ führt zu Fehlern mit dieses Tool, was dann wiederum das Umgehen von dem TPM-Zwang etc. schwieriger macht...
+Also habe ich ein kleines Script geschrieben um die Installationsdateien direkt zu modifizieren. Natürlich funktioniert das nur mit USB-Sticks und entpackten ISOs und so, gemountete ISOs lassen sich nicht bearbeiten.
+
 v0.91
 Hauptmenü leicht geändert.
 
