@@ -77,6 +77,9 @@ autounattend.xml im root Ordner oder Aehnliches blockiert In-Place_Upgrade_Helpe
 
 
 Changelog:
+V0.93
+Menü-Punkt 21 gefixt, 21 und 23 waren aus Versehen identisch.
+
 v0.92
 Mehrere Tests mit unattend.xml und autounattend.xml durchgeführt. Alles außer sources\$OEM$\$$\Panther\ führt zu Fehlern mit dieses Tool, was dann wiederum das Umgehen von dem TPM-Zwang etc. schwieriger macht...
 Also habe ich ein kleines Script geschrieben um die Installationsdateien direkt zu modifizieren. Natürlich funktioniert das nur mit USB-Sticks und entpackten ISOs und so, gemountete ISOs lassen sich nicht bearbeiten.

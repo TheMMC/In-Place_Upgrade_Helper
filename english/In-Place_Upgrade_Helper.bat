@@ -90,7 +90,7 @@ pause>nul|set/p=&echo(
 :mainmenu
 cls
 ECHO M-M-C's quick-n-dirty In-Place-Upgrade-Helper for Win10/11
-echo V0.92
+echo V0.93
 echo.
 echo Enter the number of your desired edition, press enter, choose an upgrade method, then press enter again.
 echo.
@@ -152,7 +152,7 @@ if '%choice%'=='17' goto setvarcloudn
 if '%choice%'=='18' goto setvarltsc2021
 if '%choice%'=='19' goto setvariotltsc2021
 if '%choice%'=='20' goto setvarltscn2021
-if '%choice%'=='21' goto setvarltscn2024
+if '%choice%'=='21' goto setvarltsc2024
 if '%choice%'=='22' goto setvariotltsc2024
 if '%choice%'=='23' goto setvarltscn2024
 if '%choice%'=='24' goto setvariotltscsub2024

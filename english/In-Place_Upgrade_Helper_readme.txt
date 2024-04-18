@@ -77,6 +77,9 @@ autounattend.xml in root folder or similar breaks In-Place_Upgrade_Helper.bat!
 
 
 Changelog:
+V0.93
+Fixed 21 (LTSC 2024), 21 and 23 were identical by mistake.
+
 v0.92
 Did some tests with unattend.xml and autounattend.xml. Anything besides sources\$OEM$\$$\Panther\ breaks this tool, and that gave me some problems with some TPM-requirement workarounds...
 So I wrote a small extra script to modify the Windows installation files. Obviously this only works with extracted ISOs and USB-sticks, not mounted ISOs.
