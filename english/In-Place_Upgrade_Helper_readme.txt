@@ -16,7 +16,7 @@ To find out exactly how it works, just take a look at the batch. This is not an 
 Simply copy this batch to the setup.exe in the installation medium. Or start it by itself and enter the path of your installation files.
 
 If the appropriate version is not available on the installation medium, the setup is able to generate the appropriate image on the fly.
-Most likely this is the same function that DISM /Get-TargetEditions and DISM /Set-Edition use (https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/change-the-windows-image -to-a-higher-edition-using-dism?view=windows-11).
+Most likely this is the same function that DISM /Get-TargetEditions and DISM /Set-Edition use (https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/change-the-windows-image-to-a-higher-edition-using-dism?view=windows-11).
 This is the method with which, for example, https://uupdump.net/ can generate all other editions from the two Home and Pro editions (create_virtual_editions.cmd, https://github.com/abbodi1406/BatUtil/tree/master/uup -converter-wimlib)
 This was tested with a WIM where only Home was available but setup was started with Pro-Key. As expected, the home setup still started here.
 Then the Pro was added to the WIM, but nothing more. Setup was then started again with the Pro key and the correct Pro setup now appears.
