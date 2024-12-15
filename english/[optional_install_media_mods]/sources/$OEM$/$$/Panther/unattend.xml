@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
-	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Interactive&ProcessorArchitecture=x86&ProcessorArchitecture=amd64&ProcessorArchitecture=arm64&BypassRequirementsCheck=true&BypassNetworkCheck=true&ComputerNameMode=Random&TimeZoneMode=Implicit&PartitionMode=Interactive&WindowsEditionMode=Interactive&UserAccountMode=Interactive&PasswordExpirationMode=Unlimited&LockoutMode=Default&EnableLongPaths=true&AllowPowerShellScripts=true&DisableAppSuggestions=true&PreventDeviceEncryption=true&WifiMode=Interactive&ExpressSettings=DisableAll&SystemScript0=Windows+Registry+Editor+Version+5.00%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CCurrentControlSet%5CControl%5CBitLocker%5D%0D%0A%22PreventDeviceEncryption%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CWindows%5CEnhancedStorageDevices%5D%0D%0A%22TCGSecurityActivationDisabled%22%3Ddword%3A00000001%0D%0A%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CCurrentControlSet%5CControl%5CFileSystem%5D%0D%0A%22LongPathsEnabled%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CControlSet001%5CControl%5CFileSystem%5D%0D%0A%22LongPathsEnabled%22%3Ddword%3A00000001%0D%0A%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5COffice%5C16.0%5CCommon%5COfficeUpdate%5D%0D%0A%22preventteamsinstall%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CPolicies%5CMicrosoft%5COffice%5C16.0%5CTeams%5D%0D%0A%22PreventFirstLaunchAfterInstall%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CCommunications%5D%0D%0A%22ConfigureChatAutoInstall%22%3Ddword%3A00000000%0D%0A%0D%0A%5B-HKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CWindowsUpdate%5COrchestrator%5CUScheduler%5CDevHomeUpdate%5D%0D%0A%5B-HKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CWindowsUpdate%5COrchestrator%5CUScheduler%5COutlookUpdate%5D%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CPolicies%5CMicrosoft%5COffice%5C16.0%5COneNote%5CWebServiceProvider%5D%0D%0A%22DisableSkydriveSetupOnFirstBoot%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CPolicies%5CMicrosoft%5COffice%5CCommon%5CWebIntegration%5D%0D%0A%22WebIntegrationEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CPolicies%5CMicrosoft%5CWindows%5COOBE%5D%0D%0A%22DisablePrivacyExperience%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CWindows%5COOBE%5D%0D%0A%22DisablePrivacyExperience%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CWindows%5CCloudContent%5D%0D%0A%22DisableWindowsConsumerFeatures%22%3Ddword%3A00000001%0D%0A%22DisableSoftLanding%22%3Ddword%3A00000001%0D%0A%22DisableConsumerAccountStateContent%22%3Ddword%3A00000001%0D%0A%22DisableCloudOptimizedContent%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5D%0D%0A%22AicEnabled%22%3D%22Anywhere%22%0D%0A%22DisableEdgeDesktopShortcutCreation%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSOFTWARE%5CPolicies%5CMicrosoft%5CWindows%5CExplorer%5D%0D%0A%22DisableSearchBoxSuggestions%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5CAdvanced%5D%0D%0A%22ShowSyncProviderNotifications%22%3Ddword%3A00000000%0D%0A%22Start_IrisRecommendations%22%3Ddword%3A00000000%0D%0A%22Start_AccountNotifications%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CContentDeliveryManager%5D%0D%0A%22ContentDeliveryAllowed%22%3Ddword%3A00000000%0D%0A%22SubscribedContentEnabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-202914Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-280815Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-310091Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-310092Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-310093Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-314559Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-314563Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338380Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338381Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338387Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338388Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338389Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338393Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-353694Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-353696Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-353698Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000045Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000161Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000163Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000165Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000326Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000530Enabled%22%3Ddword%3A00000000%0D%0A%22RotatingLockScreenEnabled%22%3Ddword%3A00000000%0D%0A%22RotatingLockScreenOverlayEnabled%22%3Ddword%3A00000000%0D%0A%22SoftLandingEnabled%22%3Ddword%3A00000000%0D%0A%22PreInstalledAppsEverEnabled%22%3Ddword%3A00000000%0D%0A%22PreInstalledAppsEnabled%22%3Ddword%3A00000000%0D%0A%22OemPreInstalledAppsEnabled%22%3Ddword%3A00000000%0D%0A%22SystemPaneSuggestionsEnabled%22%3Ddword%3A00000000%0D%0A%22SilentInstalledAppsEnabled%22%3Ddword%3A00000000%0D%0A%22FeatureManagementEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5B-HKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CContentDeliveryManager%5CSuggestedApps%5D%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CUserProfileEngagement%5D%0D%0A%22ScoobeSystemSettingEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CAdvertisingInfo%5D%0D%0A%22Enabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CPrivacy%5D%0D%0A%22TailoredExperiencesWithDiagnosticDataEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CUserProfileEngagement%5D%0D%0A%22ScoobeSystemSettingEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows+Defender+Security+Center%5CAccount+protection%5D%0D%0A%22DisableNotifications%22%3Ddword%3A00000001%0D%0A%22DisableWindowsHelloNotifications%22%3Ddword%3A00000001%0D%0A%22DisableDynamiclockNotifications%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSOFTWARE%5CMicrosoft%5CWindows+Security+Health%5CState%5D%0D%0A%22AccountProtection_MicrosoftAccount_Disconnected%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CPolicies%5CExplorer%5D%0D%0A%22SettingsPageVisibility%22%3D%22hide%3Ahome%22%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5COOBE%5D%0D%0A%22BypassNRO%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CSetup%5CLabConfig%5D%0D%0A%22BypassTPMCheck%22%3Ddword%3A00000001%0D%0A%22BypassSecureBootCheck%22%3Ddword%3A00000001%0D%0A%22BypassRAMCheck%22%3Ddword%3A00000001%0D%0A%22BypassStorageCheck%22%3Ddword%3A00000001%0D%0A%22BypassCPUCheck%22%3Ddword%3A00000001%0D%0A%22BypassDiskCheck%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CSetup%5CMoSetup%5D%0D%0A%22AllowUpgradesWithUnsupportedTPMOrCPU%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CSOFTWARE%5CMicrosoft%5CPCHC%5D%0D%0A%22UpgradeEligibility%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_CURRENT_USER%5CControl+Panel%5CUnsupportedHardwareNotificationCache%5D%0D%0A%E2%80%9ESV1%E2%80%B3%3Ddword%3A00000000%0D%0A%E2%80%9ESV2%E2%80%B3%3Ddword%3A00000000%0D%0A&SystemScriptType0=Reg&DefaultUserScript0=Windows+Registry+Editor+Version+5.00%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CCurrentControlSet%5CControl%5CBitLocker%5D%0D%0A%22PreventDeviceEncryption%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CWindows%5CEnhancedStorageDevices%5D%0D%0A%22TCGSecurityActivationDisabled%22%3Ddword%3A00000001%0D%0A%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CCurrentControlSet%5CControl%5CFileSystem%5D%0D%0A%22LongPathsEnabled%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CControlSet001%5CControl%5CFileSystem%5D%0D%0A%22LongPathsEnabled%22%3Ddword%3A00000001%0D%0A%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5COffice%5C16.0%5CCommon%5COfficeUpdate%5D%0D%0A%22preventteamsinstall%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSoftware%5CPolicies%5CMicrosoft%5COffice%5C16.0%5CTeams%5D%0D%0A%22PreventFirstLaunchAfterInstall%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CCommunications%5D%0D%0A%22ConfigureChatAutoInstall%22%3Ddword%3A00000000%0D%0A%0D%0A%5B-HKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CWindowsUpdate%5COrchestrator%5CUScheduler%5CDevHomeUpdate%5D%0D%0A%5B-HKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CWindowsUpdate%5COrchestrator%5CUScheduler%5COutlookUpdate%5D%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSoftware%5CPolicies%5CMicrosoft%5COffice%5C16.0%5COneNote%5CWebServiceProvider%5D%0D%0A%22DisableSkydriveSetupOnFirstBoot%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSoftware%5CPolicies%5CMicrosoft%5COffice%5CCommon%5CWebIntegration%5D%0D%0A%22WebIntegrationEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSoftware%5CPolicies%5CMicrosoft%5CWindows%5COOBE%5D%0D%0A%22DisablePrivacyExperience%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CWindows%5COOBE%5D%0D%0A%22DisablePrivacyExperience%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CPolicies%5CMicrosoft%5CWindows%5CCloudContent%5D%0D%0A%22DisableWindowsConsumerFeatures%22%3Ddword%3A00000001%0D%0A%22DisableSoftLanding%22%3Ddword%3A00000001%0D%0A%22DisableConsumerAccountStateContent%22%3Ddword%3A00000001%0D%0A%22DisableCloudOptimizedContent%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5D%0D%0A%22AicEnabled%22%3D%22Anywhere%22%0D%0A%22DisableEdgeDesktopShortcutCreation%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSOFTWARE%5CPolicies%5CMicrosoft%5CWindows%5CExplorer%5D%0D%0A%22DisableSearchBoxSuggestions%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CExplorer%5CAdvanced%5D%0D%0A%22ShowSyncProviderNotifications%22%3Ddword%3A00000000%0D%0A%22Start_IrisRecommendations%22%3Ddword%3A00000000%0D%0A%22Start_AccountNotifications%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CContentDeliveryManager%5D%0D%0A%22ContentDeliveryAllowed%22%3Ddword%3A00000000%0D%0A%22SubscribedContentEnabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-202914Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-280815Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-310091Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-310092Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-310093Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-314559Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-314563Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338380Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338381Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338387Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338388Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338389Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-338393Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-353694Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-353696Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-353698Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000045Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000161Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000163Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000165Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000326Enabled%22%3Ddword%3A00000000%0D%0A%22SubscribedContent-88000530Enabled%22%3Ddword%3A00000000%0D%0A%22RotatingLockScreenEnabled%22%3Ddword%3A00000000%0D%0A%22RotatingLockScreenOverlayEnabled%22%3Ddword%3A00000000%0D%0A%22SoftLandingEnabled%22%3Ddword%3A00000000%0D%0A%22PreInstalledAppsEverEnabled%22%3Ddword%3A00000000%0D%0A%22PreInstalledAppsEnabled%22%3Ddword%3A00000000%0D%0A%22OemPreInstalledAppsEnabled%22%3Ddword%3A00000000%0D%0A%22SystemPaneSuggestionsEnabled%22%3Ddword%3A00000000%0D%0A%22SilentInstalledAppsEnabled%22%3Ddword%3A00000000%0D%0A%22FeatureManagementEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5B-HKEY_CURRENT_USER%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CContentDeliveryManager%5CSuggestedApps%5D%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CUserProfileEngagement%5D%0D%0A%22ScoobeSystemSettingEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CAdvertisingInfo%5D%0D%0A%22Enabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSoftware%5CMicrosoft%5CWindows%5CCurrentVersion%5CPrivacy%5D%0D%0A%22TailoredExperiencesWithDiagnosticDataEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CUserProfileEngagement%5D%0D%0A%22ScoobeSystemSettingEnabled%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSoftware%5CMicrosoft%5CWindows+Defender+Security+Center%5CAccount+protection%5D%0D%0A%22DisableNotifications%22%3Ddword%3A00000001%0D%0A%22DisableWindowsHelloNotifications%22%3Ddword%3A00000001%0D%0A%22DisableDynamiclockNotifications%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSOFTWARE%5CMicrosoft%5CWindows+Security+Health%5CState%5D%0D%0A%22AccountProtection_MicrosoftAccount_Disconnected%22%3Ddword%3A00000000%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5CPolicies%5CExplorer%5D%0D%0A%22SettingsPageVisibility%22%3D%22hide%3Ahome%22%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSOFTWARE%5CMicrosoft%5CWindows%5CCurrentVersion%5COOBE%5D%0D%0A%22BypassNRO%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CSetup%5CLabConfig%5D%0D%0A%22BypassTPMCheck%22%3Ddword%3A00000001%0D%0A%22BypassSecureBootCheck%22%3Ddword%3A00000001%0D%0A%22BypassRAMCheck%22%3Ddword%3A00000001%0D%0A%22BypassStorageCheck%22%3Ddword%3A00000001%0D%0A%22BypassCPUCheck%22%3Ddword%3A00000001%0D%0A%22BypassDiskCheck%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_LOCAL_MACHINE%5CSYSTEM%5CSetup%5CMoSetup%5D%0D%0A%22AllowUpgradesWithUnsupportedTPMOrCPU%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CSOFTWARE%5CMicrosoft%5CPCHC%5D%0D%0A%22UpgradeEligibility%22%3Ddword%3A00000001%0D%0A%0D%0A%5BHKEY_USERS%5CDefaultUser%5CControl+Panel%5CUnsupportedHardwareNotificationCache%5D%0D%0A%E2%80%9ESV1%E2%80%B3%3Ddword%3A00000000%0D%0A%E2%80%9ESV2%E2%80%B3%3Ddword%3A00000000%0D%0A&DefaultUserScriptType0=Reg&WdacMode=Skip-->
+	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Interactive&ProcessorArchitecture=x86&ProcessorArchitecture=amd64&ProcessorArchitecture=arm64&BypassRequirementsCheck=true&ComputerNameMode=Random&CompactOsMode=Always&TimeZoneMode=Implicit&PartitionMode=Interactive&WindowsEditionMode=Interactive&UserAccountMode=InteractiveLocal&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=HiddenSystem&TaskbarSearch=Hide&ShowFileExtensions=true&DisableBingResults=true&DisableFastStartup=true&DisableSystemRestore=true&EnableLongPaths=true&AllowPowerShellScripts=true&TurnOffSystemSounds=true&DisableAppSuggestions=true&PreventDeviceEncryption=true&HideEdgeFre=true&WifiMode=Interactive&ExpressSettings=DisableAll&KeysMode=Skip&ColorMode=Default&WallpaperMode=Default&Remove3DViewer=true&RemoveBingSearch=true&RemoveClipchamp=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveFamily=true&RemoveFeedbackHub=true&RemoveGetHelp=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMixedReality=true&RemoveZuneVideo=true&RemoveNews=true&RemoveOffice365=true&RemoveOneDrive=true&RemoveOneNote=true&RemoveOneSync=true&RemoveOutlook=true&RemovePeople=true&RemovePowerShellISE=true&RemoveQuickAssist=true&RemoveRecall=true&RemoveRdpClient=true&RemoveSkype=true&RemoveSolitaire=true&RemoveStepsRecorder=true&RemoveStickyNotes=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWallet=true&RemoveWeather=true&RemoveFaxAndScan=true&RemoveWindowsHello=true&RemoveXboxApps=true&RemoveYourPhone=true&StartTilesMode=Default&StartPinsMode=Empty&WdacMode=Skip-->
 	<settings pass="offlineServicing"></settings>
 	<settings pass="windowsPE">
 		<component name="Microsoft-Windows-Setup" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<ImageInstall>
+				<OSImage>
+					<Compact>true</Compact>
+				</OSImage>
+			</ImageInstall>
 			<UserData>
 				<ProductKey>
-					<Key></Key>
+					<Key>00000-00000-00000-00000-00000</Key>
 				</ProductKey>
 				<AcceptEula>true</AcceptEula>
 			</UserData>
+			<UseConfigurationSet>false</UseConfigurationSet>
 			<RunSynchronous>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>1</Order>
@@ -21,29 +27,23 @@
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>3</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassStorageCheck /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>4</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassCPUCheck /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>5</Order>
 					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassRAMCheck /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>6</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassDiskCheck /t REG_DWORD /d 1 /f</Path>
 				</RunSynchronousCommand>
 			</RunSynchronous>
 		</component>
 		<component name="Microsoft-Windows-Setup" processorArchitecture="arm64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<ImageInstall>
+				<OSImage>
+					<Compact>true</Compact>
+				</OSImage>
+			</ImageInstall>
 			<UserData>
 				<ProductKey>
-					<Key></Key>
+					<Key>00000-00000-00000-00000-00000</Key>
 				</ProductKey>
 				<AcceptEula>true</AcceptEula>
 			</UserData>
+			<UseConfigurationSet>false</UseConfigurationSet>
 			<RunSynchronous>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>1</Order>
@@ -55,29 +55,23 @@
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>3</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassStorageCheck /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>4</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassCPUCheck /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>5</Order>
 					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassRAMCheck /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>6</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassDiskCheck /t REG_DWORD /d 1 /f</Path>
 				</RunSynchronousCommand>
 			</RunSynchronous>
 		</component>
 		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<ImageInstall>
+				<OSImage>
+					<Compact>true</Compact>
+				</OSImage>
+			</ImageInstall>
 			<UserData>
 				<ProductKey>
-					<Key></Key>
+					<Key>00000-00000-00000-00000-00000</Key>
 				</ProductKey>
 				<AcceptEula>true</AcceptEula>
 			</UserData>
+			<UseConfigurationSet>false</UseConfigurationSet>
 			<RunSynchronous>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>1</Order>
@@ -89,19 +83,7 @@
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>3</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassStorageCheck /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>4</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassCPUCheck /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>5</Order>
 					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassRAMCheck /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>6</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassDiskCheck /t REG_DWORD /d 1 /f</Path>
 				</RunSynchronousCommand>
 			</RunSynchronous>
 		</component>
@@ -112,114 +94,22 @@
 			<RunSynchronous>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>1</Order>
-					<Path>reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v BypassNRO /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>2</Order>
-					<Path>net.exe accounts /maxpwage:UNLIMITED</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>3</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>4</Order>
-					<Path>powershell.exe -NoProfile -Command "Set-ExecutionPolicy -Scope 'LocalMachine' -ExecutionPolicy 'RemoteSigned' -Force;"</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>5</Order>
-					<Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>6</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "ContentDeliveryAllowed" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>7</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "FeatureManagementEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>8</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "OEMPreInstalledAppsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>9</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "PreInstalledAppsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>10</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "PreInstalledAppsEverEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>11</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SilentInstalledAppsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>12</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SoftLandingEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>13</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContentEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>14</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-310093Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>15</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338387Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>16</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338388Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>17</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338389Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>18</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338393Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>19</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353698Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>20</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SystemPaneSuggestionsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>21</Order>
-					<Path>reg.exe unload "HKU\DefaultUser"</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>22</Order>
-					<Path>reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsConsumerFeatures" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>23</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\BitLocker" /v "PreventDeviceEncryption" /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>24</Order>
 					<Path>powershell.exe -NoProfile -Command "$xml = [xml]::new(); $xml.Load('C:\Windows\Panther\unattend.xml'); $sb = [scriptblock]::Create( $xml.unattend.Extensions.ExtractScript ); Invoke-Command -ScriptBlock $sb -ArgumentList $xml;"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>25</Order>
-					<Path>cmd.exe /c "reg.exe import "C:\Windows\Setup\Scripts\unattend-01.reg" &gt;&gt;"C:\Windows\Setup\Scripts\unattend-01.log" 2&gt;&amp;1"</Path>
+					<Order>2</Order>
+					<Path>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\Specialize.ps1' -Raw | Invoke-Expression;"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>26</Order>
+					<Order>3</Order>
 					<Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>27</Order>
-					<Path>cmd.exe /c "reg.exe import "C:\Windows\Setup\Scripts\unattend-02.reg" &gt;&gt;"C:\Windows\Setup\Scripts\unattend-02.log" 2&gt;&amp;1"</Path>
+					<Order>4</Order>
+					<Path>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\DefaultUser.ps1' -Raw | Invoke-Expression;"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>28</Order>
+					<Order>5</Order>
 					<Path>reg.exe unload "HKU\DefaultUser"</Path>
 				</RunSynchronousCommand>
 			</RunSynchronous>
@@ -228,114 +118,22 @@
 			<RunSynchronous>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>1</Order>
-					<Path>reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v BypassNRO /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>2</Order>
-					<Path>net.exe accounts /maxpwage:UNLIMITED</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>3</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>4</Order>
-					<Path>powershell.exe -NoProfile -Command "Set-ExecutionPolicy -Scope 'LocalMachine' -ExecutionPolicy 'RemoteSigned' -Force;"</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>5</Order>
-					<Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>6</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "ContentDeliveryAllowed" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>7</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "FeatureManagementEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>8</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "OEMPreInstalledAppsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>9</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "PreInstalledAppsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>10</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "PreInstalledAppsEverEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>11</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SilentInstalledAppsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>12</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SoftLandingEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>13</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContentEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>14</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-310093Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>15</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338387Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>16</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338388Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>17</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338389Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>18</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338393Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>19</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353698Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>20</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SystemPaneSuggestionsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>21</Order>
-					<Path>reg.exe unload "HKU\DefaultUser"</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>22</Order>
-					<Path>reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsConsumerFeatures" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>23</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\BitLocker" /v "PreventDeviceEncryption" /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>24</Order>
 					<Path>powershell.exe -NoProfile -Command "$xml = [xml]::new(); $xml.Load('C:\Windows\Panther\unattend.xml'); $sb = [scriptblock]::Create( $xml.unattend.Extensions.ExtractScript ); Invoke-Command -ScriptBlock $sb -ArgumentList $xml;"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>25</Order>
-					<Path>cmd.exe /c "reg.exe import "C:\Windows\Setup\Scripts\unattend-01.reg" &gt;&gt;"C:\Windows\Setup\Scripts\unattend-01.log" 2&gt;&amp;1"</Path>
+					<Order>2</Order>
+					<Path>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\Specialize.ps1' -Raw | Invoke-Expression;"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>26</Order>
+					<Order>3</Order>
 					<Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>27</Order>
-					<Path>cmd.exe /c "reg.exe import "C:\Windows\Setup\Scripts\unattend-02.reg" &gt;&gt;"C:\Windows\Setup\Scripts\unattend-02.log" 2&gt;&amp;1"</Path>
+					<Order>4</Order>
+					<Path>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\DefaultUser.ps1' -Raw | Invoke-Expression;"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>28</Order>
+					<Order>5</Order>
 					<Path>reg.exe unload "HKU\DefaultUser"</Path>
 				</RunSynchronousCommand>
 			</RunSynchronous>
@@ -344,114 +142,22 @@
 			<RunSynchronous>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>1</Order>
-					<Path>reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v BypassNRO /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>2</Order>
-					<Path>net.exe accounts /maxpwage:UNLIMITED</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>3</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>4</Order>
-					<Path>powershell.exe -NoProfile -Command "Set-ExecutionPolicy -Scope 'LocalMachine' -ExecutionPolicy 'RemoteSigned' -Force;"</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>5</Order>
-					<Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>6</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "ContentDeliveryAllowed" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>7</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "FeatureManagementEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>8</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "OEMPreInstalledAppsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>9</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "PreInstalledAppsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>10</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "PreInstalledAppsEverEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>11</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SilentInstalledAppsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>12</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SoftLandingEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>13</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContentEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>14</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-310093Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>15</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338387Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>16</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338388Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>17</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338389Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>18</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338393Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>19</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353698Enabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>20</Order>
-					<Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SystemPaneSuggestionsEnabled" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>21</Order>
-					<Path>reg.exe unload "HKU\DefaultUser"</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>22</Order>
-					<Path>reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsConsumerFeatures" /t REG_DWORD /d 0 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>23</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\BitLocker" /v "PreventDeviceEncryption" /t REG_DWORD /d 1 /f</Path>
-				</RunSynchronousCommand>
-				<RunSynchronousCommand wcm:action="add">
-					<Order>24</Order>
 					<Path>powershell.exe -NoProfile -Command "$xml = [xml]::new(); $xml.Load('C:\Windows\Panther\unattend.xml'); $sb = [scriptblock]::Create( $xml.unattend.Extensions.ExtractScript ); Invoke-Command -ScriptBlock $sb -ArgumentList $xml;"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>25</Order>
-					<Path>cmd.exe /c "reg.exe import "C:\Windows\Setup\Scripts\unattend-01.reg" &gt;&gt;"C:\Windows\Setup\Scripts\unattend-01.log" 2&gt;&amp;1"</Path>
+					<Order>2</Order>
+					<Path>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\Specialize.ps1' -Raw | Invoke-Expression;"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>26</Order>
+					<Order>3</Order>
 					<Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>27</Order>
-					<Path>cmd.exe /c "reg.exe import "C:\Windows\Setup\Scripts\unattend-02.reg" &gt;&gt;"C:\Windows\Setup\Scripts\unattend-02.log" 2&gt;&amp;1"</Path>
+					<Order>4</Order>
+					<Path>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\DefaultUser.ps1' -Raw | Invoke-Expression;"</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>28</Order>
+					<Order>5</Order>
 					<Path>reg.exe unload "HKU\DefaultUser"</Path>
 				</RunSynchronousCommand>
 			</RunSynchronous>
@@ -465,39 +171,42 @@
 				<ProtectYourPC>3</ProtectYourPC>
 				<HideEULAPage>true</HideEULAPage>
 				<HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
+				<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
 			</OOBE>
-		</component>
-		<component name="Microsoft-Windows-SecureStartup-FilterDriver" processorArchitecture="x86" language="neutral" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS">
-			<PreventDeviceEncryption>true</PreventDeviceEncryption>
-		</component>
-		<component name="Microsoft-Windows-EnhancedStorage-Adm" processorArchitecture="x86" language="neutral" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS">
-			<TCGSecurityActivationDisabled>1</TCGSecurityActivationDisabled>
+			<FirstLogonCommands>
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<CommandLine>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\FirstLogon.ps1' -Raw | Invoke-Expression;"</CommandLine>
+				</SynchronousCommand>
+			</FirstLogonCommands>
 		</component>
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="arm64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
 			<OOBE>
 				<ProtectYourPC>3</ProtectYourPC>
 				<HideEULAPage>true</HideEULAPage>
 				<HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
+				<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
 			</OOBE>
-		</component>
-		<component name="Microsoft-Windows-SecureStartup-FilterDriver" processorArchitecture="arm64" language="neutral" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS">
-			<PreventDeviceEncryption>true</PreventDeviceEncryption>
-		</component>
-		<component name="Microsoft-Windows-EnhancedStorage-Adm" processorArchitecture="arm64" language="neutral" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS">
-			<TCGSecurityActivationDisabled>1</TCGSecurityActivationDisabled>
+			<FirstLogonCommands>
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<CommandLine>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\FirstLogon.ps1' -Raw | Invoke-Expression;"</CommandLine>
+				</SynchronousCommand>
+			</FirstLogonCommands>
 		</component>
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
 			<OOBE>
 				<ProtectYourPC>3</ProtectYourPC>
 				<HideEULAPage>true</HideEULAPage>
 				<HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
+				<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
 			</OOBE>
-		</component>
-		<component name="Microsoft-Windows-SecureStartup-FilterDriver" processorArchitecture="amd64" language="neutral" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS">
-			<PreventDeviceEncryption>true</PreventDeviceEncryption>
-		</component>
-		<component name="Microsoft-Windows-EnhancedStorage-Adm" processorArchitecture="amd64" language="neutral" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS">
-			<TCGSecurityActivationDisabled>1</TCGSecurityActivationDisabled>
+			<FirstLogonCommands>
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<CommandLine>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\FirstLogon.ps1' -Raw | Invoke-Expression;"</CommandLine>
+				</SynchronousCommand>
+			</FirstLogonCommands>
 		</component>
 	</settings>
 	<Extensions xmlns="https://schneegans.de/windows/unattend-generator/">
@@ -506,301 +215,388 @@ param(
     [xml] $Document
 );
 
-$scriptsDir = 'C:\Windows\Setup\Scripts\';
 foreach( $file in $Document.unattend.Extensions.File ) {
     $path = [System.Environment]::ExpandEnvironmentVariables(
         $file.GetAttribute( 'path' )
     );
-    if( $path.StartsWith( $scriptsDir ) ) {
-        mkdir -Path $scriptsDir -ErrorAction 'SilentlyContinue';
+    mkdir -Path( $path | Split-Path -Parent ) -ErrorAction 'SilentlyContinue';
+    $content = $file.InnerText.Trim();
+    if( $file.GetAttribute( 'transformation' ) -ieq 'Base64' ) {
+        [System.IO.File]::WriteAllBytes( $path, [System.Convert]::FromBase64String( $content ) );
+    } else {
+        $encoding = switch( [System.IO.Path]::GetExtension( $path ) ) {
+            { $_ -in '.ps1', '.xml' } { [System.Text.Encoding]::UTF8; }
+            { $_ -in '.reg', '.vbs', '.js' } { [System.Text.UnicodeEncoding]::new( $false, $true ); }
+            default { [System.Text.Encoding]::Default; }
+        };
+        [System.IO.File]::WriteAllBytes( $path, ( $encoding.GetPreamble() + $encoding.GetBytes( $content ) ) );
     }
-    $encoding = switch( [System.IO.Path]::GetExtension( $path ) ) {
-        { $_ -in '.ps1', '.xml' } { [System.Text.Encoding]::UTF8; }
-        { $_ -in '.reg', '.vbs', '.js' } { [System.Text.UnicodeEncoding]::new( $false, $true ); }
-        default { [System.Text.Encoding]::Default; }
-    };
-    [System.IO.File]::WriteAllBytes( $path, ( $encoding.GetPreamble() + $encoding.GetBytes( $file.InnerText.Trim() ) ) );
 }
 		</ExtractScript>
-		<File path="C:\Windows\Setup\Scripts\unattend-01.reg">
-Windows Registry Editor Version 5.00
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker]
-"PreventDeviceEncryption"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EnhancedStorageDevices]
-"TCGSecurityActivationDisabled"=dword:00000001
-
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
-"LongPathsEnabled"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FileSystem]
-"LongPathsEnabled"=dword:00000001
-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Office\16.0\Common\OfficeUpdate]
-"preventteamsinstall"=dword:00000001
-
-[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Teams]
-"PreventFirstLaunchAfterInstall"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications]
-"ConfigureChatAutoInstall"=dword:00000000
-
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Orchestrator\UScheduler\DevHomeUpdate]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Orchestrator\UScheduler\OutlookUpdate]
-
-[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\OneNote\WebServiceProvider]
-"DisableSkydriveSetupOnFirstBoot"=dword:00000001
-
-[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\Common\WebIntegration]
-"WebIntegrationEnabled"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\OOBE]
-"DisablePrivacyExperience"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OOBE]
-"DisablePrivacyExperience"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
-"DisableWindowsConsumerFeatures"=dword:00000001
-"DisableSoftLanding"=dword:00000001
-"DisableConsumerAccountStateContent"=dword:00000001
-"DisableCloudOptimizedContent"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
-"AicEnabled"="Anywhere"
-"DisableEdgeDesktopShortcutCreation"=dword:00000001
-
-[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
-"DisableSearchBoxSuggestions"=dword:00000001
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"ShowSyncProviderNotifications"=dword:00000000
-"Start_IrisRecommendations"=dword:00000000
-"Start_AccountNotifications"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"ContentDeliveryAllowed"=dword:00000000
-"SubscribedContentEnabled"=dword:00000000
-"SubscribedContent-202914Enabled"=dword:00000000
-"SubscribedContent-280815Enabled"=dword:00000000
-"SubscribedContent-310091Enabled"=dword:00000000
-"SubscribedContent-310092Enabled"=dword:00000000
-"SubscribedContent-310093Enabled"=dword:00000000
-"SubscribedContent-314559Enabled"=dword:00000000
-"SubscribedContent-314563Enabled"=dword:00000000
-"SubscribedContent-338380Enabled"=dword:00000000
-"SubscribedContent-338381Enabled"=dword:00000000
-"SubscribedContent-338387Enabled"=dword:00000000
-"SubscribedContent-338388Enabled"=dword:00000000
-"SubscribedContent-338389Enabled"=dword:00000000
-"SubscribedContent-338393Enabled"=dword:00000000
-"SubscribedContent-353694Enabled"=dword:00000000
-"SubscribedContent-353696Enabled"=dword:00000000
-"SubscribedContent-353698Enabled"=dword:00000000
-"SubscribedContent-88000045Enabled"=dword:00000000
-"SubscribedContent-88000161Enabled"=dword:00000000
-"SubscribedContent-88000163Enabled"=dword:00000000
-"SubscribedContent-88000165Enabled"=dword:00000000
-"SubscribedContent-88000326Enabled"=dword:00000000
-"SubscribedContent-88000530Enabled"=dword:00000000
-"RotatingLockScreenEnabled"=dword:00000000
-"RotatingLockScreenOverlayEnabled"=dword:00000000
-"SoftLandingEnabled"=dword:00000000
-"PreInstalledAppsEverEnabled"=dword:00000000
-"PreInstalledAppsEnabled"=dword:00000000
-"OemPreInstalledAppsEnabled"=dword:00000000
-"SystemPaneSuggestionsEnabled"=dword:00000000
-"SilentInstalledAppsEnabled"=dword:00000000
-"FeatureManagementEnabled"=dword:00000000
-
-[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\SuggestedApps]
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
-"ScoobeSystemSettingEnabled"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Privacy]
-"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
-"ScoobeSystemSettingEnabled"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows Defender Security Center\Account protection]
-"DisableNotifications"=dword:00000001
-"DisableWindowsHelloNotifications"=dword:00000001
-"DisableDynamiclockNotifications"=dword:00000001
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows Security Health\State]
-"AccountProtection_MicrosoftAccount_Disconnected"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-"SettingsPageVisibility"="hide:home"
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE]
-"BypassNRO"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
-"BypassTPMCheck"=dword:00000001
-"BypassSecureBootCheck"=dword:00000001
-"BypassRAMCheck"=dword:00000001
-"BypassStorageCheck"=dword:00000001
-"BypassCPUCheck"=dword:00000001
-"BypassDiskCheck"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
-"AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\PCHC]
-"UpgradeEligibility"=dword:00000001
-
-[HKEY_CURRENT_USER\Control Panel\UnsupportedHardwareNotificationCache]
-„SV1″=dword:00000000
-„SV2″=dword:00000000
+		<File path="C:\Windows\Setup\Scripts\RemovePackages.ps1" transformation="Text">
+$selectors = @(
+	'Microsoft.Microsoft3DViewer';
+	'Microsoft.BingSearch';
+	'Clipchamp.Clipchamp';
+	'Microsoft.549981C3F5F10';
+	'Microsoft.Windows.DevHome';
+	'MicrosoftCorporationII.MicrosoftFamily';
+	'Microsoft.WindowsFeedbackHub';
+	'Microsoft.GetHelp';
+	'Microsoft.Getstarted';
+	'microsoft.windowscommunicationsapps';
+	'Microsoft.WindowsMaps';
+	'Microsoft.MixedReality.Portal';
+	'Microsoft.BingNews';
+	'Microsoft.MicrosoftOfficeHub';
+	'Microsoft.Office.OneNote';
+	'Microsoft.OutlookForWindows';
+	'Microsoft.People';
+	'MicrosoftCorporationII.QuickAssist';
+	'Microsoft.SkypeApp';
+	'Microsoft.MicrosoftSolitaireCollection';
+	'Microsoft.MicrosoftStickyNotes';
+	'MicrosoftTeams';
+	'MSTeams';
+	'Microsoft.Todos';
+	'Microsoft.WindowsSoundRecorder';
+	'Microsoft.Wallet';
+	'Microsoft.BingWeather';
+	'Microsoft.Xbox.TCUI';
+	'Microsoft.XboxApp';
+	'Microsoft.XboxGameOverlay';
+	'Microsoft.XboxGamingOverlay';
+	'Microsoft.XboxIdentityProvider';
+	'Microsoft.XboxSpeechToTextOverlay';
+	'Microsoft.GamingApp';
+	'Microsoft.YourPhone';
+	'Microsoft.ZuneVideo';
+);
+$getCommand = {
+  Get-AppxProvisionedPackage -Online;
+};
+$filterCommand = {
+  $_.DisplayName -eq $selector;
+};
+$removeCommand = {
+  [CmdletBinding()]
+  param(
+    [Parameter( Mandatory, ValueFromPipeline )]
+    $InputObject
+  );
+  process {
+    $InputObject | Remove-AppxProvisionedPackage -AllUsers -Online -ErrorAction 'Continue';
+  }
+};
+$type = 'Package';
+$logfile = 'C:\Windows\Setup\Scripts\RemovePackages.log';
+&amp; {
+	$installed = &amp; $getCommand;
+	foreach( $selector in $selectors ) {
+		$result = [ordered] @{
+			Selector = $selector;
+		};
+		$found = $installed | Where-Object -FilterScript $filterCommand;
+		if( $found ) {
+			$result.Output = $found | &amp; $removeCommand;
+			if( $? ) {
+				$result.Message = "$type removed.";
+			} else {
+				$result.Message = "$type not removed.";
+				$result.Error = $Error[0];
+			}
+		} else {
+			$result.Message = "$type not installed.";
+		}
+		$result | ConvertTo-Json -Depth 3 -Compress;
+	}
+} *&gt;&amp;1 &gt;&gt; $logfile;
 		</File>
-		<File path="C:\Windows\Setup\Scripts\unattend-02.reg">
-Windows Registry Editor Version 5.00
+		<File path="C:\Windows\Setup\Scripts\RemoveCapabilities.ps1" transformation="Text">
+$selectors = @(
+	'Print.Fax.Scan';
+	'OneCoreUAP.OneSync';
+	'Microsoft.Windows.PowerShell.ISE';
+	'App.Support.QuickAssist';
+	'App.StepsRecorder';
+	'Hello.Face.18967';
+	'Hello.Face.Migration.18967';
+	'Hello.Face.20134';
+);
+$getCommand = {
+  Get-WindowsCapability -Online | Where-Object -Property 'State' -NotIn -Value @(
+    'NotPresent';
+    'Removed';
+  );
+};
+$filterCommand = {
+  ($_.Name -split '~')[0] -eq $selector;
+};
+$removeCommand = {
+  [CmdletBinding()]
+  param(
+    [Parameter( Mandatory, ValueFromPipeline )]
+    $InputObject
+  );
+  process {
+    $InputObject | Remove-WindowsCapability -Online -ErrorAction 'Continue';
+  }
+};
+$type = 'Capability';
+$logfile = 'C:\Windows\Setup\Scripts\RemoveCapabilities.log';
+&amp; {
+	$installed = &amp; $getCommand;
+	foreach( $selector in $selectors ) {
+		$result = [ordered] @{
+			Selector = $selector;
+		};
+		$found = $installed | Where-Object -FilterScript $filterCommand;
+		if( $found ) {
+			$result.Output = $found | &amp; $removeCommand;
+			if( $? ) {
+				$result.Message = "$type removed.";
+			} else {
+				$result.Message = "$type not removed.";
+				$result.Error = $Error[0];
+			}
+		} else {
+			$result.Message = "$type not installed.";
+		}
+		$result | ConvertTo-Json -Depth 3 -Compress;
+	}
+} *&gt;&amp;1 &gt;&gt; $logfile;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\RemoveFeatures.ps1" transformation="Text">
+$selectors = @(
+	'Microsoft-RemoteDesktopConnection';
+	'Recall';
+);
+$getCommand = {
+  Get-WindowsOptionalFeature -Online | Where-Object -Property 'State' -NotIn -Value @(
+    'Disabled';
+    'DisabledWithPayloadRemoved';
+  );
+};
+$filterCommand = {
+  $_.FeatureName -eq $selector;
+};
+$removeCommand = {
+  [CmdletBinding()]
+  param(
+    [Parameter( Mandatory, ValueFromPipeline )]
+    $InputObject
+  );
+  process {
+    $InputObject | Disable-WindowsOptionalFeature -Online -Remove -NoRestart -ErrorAction 'Continue';
+  }
+};
+$type = 'Feature';
+$logfile = 'C:\Windows\Setup\Scripts\RemoveFeatures.log';
+&amp; {
+	$installed = &amp; $getCommand;
+	foreach( $selector in $selectors ) {
+		$result = [ordered] @{
+			Selector = $selector;
+		};
+		$found = $installed | Where-Object -FilterScript $filterCommand;
+		if( $found ) {
+			$result.Output = $found | &amp; $removeCommand;
+			if( $? ) {
+				$result.Message = "$type removed.";
+			} else {
+				$result.Message = "$type not removed.";
+				$result.Error = $Error[0];
+			}
+		} else {
+			$result.Message = "$type not installed.";
+		}
+		$result | ConvertTo-Json -Depth 3 -Compress;
+	}
+} *&gt;&amp;1 &gt;&gt; $logfile;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\TurnOffSystemSounds.ps1" transformation="Text">
+$excludes = Get-ChildItem -LiteralPath 'Registry::HKU\DefaultUser\AppEvents\EventLabels' |
+    Where-Object -FilterScript { ($_ | Get-ItemProperty).ExcludeFromCPL -eq 1; } |
+    Select-Object -ExpandProperty 'PSChildName';
+Get-ChildItem -Path 'Registry::HKU\DefaultUser\AppEvents\Schemes\Apps\*\*' |
+    Where-Object -Property 'PSChildName' -NotIn $excludes |
+    Get-ChildItem -Include '.Current' | Set-ItemProperty -Name '(Default)' -Value '';
+		</File>
+		<File path="C:\Windows\Setup\Scripts\SetStartPins.ps1" transformation="Text">
+$json = '{"pinnedList":[]}';
+if( [System.Environment]::OSVersion.Version.Build -lt 20000 ) {
+	return;
+}
+$key = 'Registry::HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Start';
+New-Item -Path $key -ItemType 'Directory' -ErrorAction 'SilentlyContinue';
+Set-ItemProperty -LiteralPath $key -Name 'ConfigureStartPins' -Value $json -Type 'String';
+		</File>
+		<File path="C:\Windows\Setup\Scripts\Specialize.ps1" transformation="Text">
+$scripts = @(
+	{
+		reg.exe add "HKLM\SYSTEM\Setup\MoSetup" /v AllowUpgradesWithUnsupportedTPMOrCPU /t REG_DWORD /d 1 /f;
+	};
+	{
+		Remove-Item -LiteralPath 'Registry::HKLM\Software\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\DevHomeUpdate' -Force -ErrorAction 'SilentlyContinue';
+	};
+	{
+		Remove-Item -LiteralPath 'C:\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk', 'C:\Windows\System32\OneDriveSetup.exe', 'C:\Windows\SysWOW64\OneDriveSetup.exe' -ErrorAction 'Continue';
+	};
+	{
+		Remove-Item -LiteralPath 'Registry::HKLM\Software\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\OutlookUpdate' -Force -ErrorAction 'SilentlyContinue';
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications" /v ConfigureChatAutoInstall /t REG_DWORD /d 0 /f;
+	};
+	{
+		Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\RemovePackages.ps1' -Raw | Invoke-Expression;
+	};
+	{
+		Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\RemoveCapabilities.ps1' -Raw | Invoke-Expression;
+	};
+	{
+		Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\RemoveFeatures.ps1' -Raw | Invoke-Expression;
+	};
+	{
+		net.exe accounts /maxpwage:UNLIMITED;
+	};
+	{
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+	};
+	{
+		Set-ExecutionPolicy -Scope 'LocalMachine' -ExecutionPolicy 'RemoteSigned' -Force;
+	};
+	{
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation" /v DisableStartupSound /t REG_DWORD /d 1 /f;
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\EditionOverrides" /v UserSetting_DisableStartupSound /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsConsumerFeatures" /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\BitLocker" /v "PreventDeviceEncryption" /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v HideFirstRunExperience /t REG_DWORD /d 1 /f;
+	};
+	{
+		Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\SetStartPins.ps1' -Raw | Invoke-Expression;
+	};
+);
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker]
-"PreventDeviceEncryption"=dword:00000001
+&amp; {
+	[float] $complete = 0;
+	[float] $increment = 100 / $scripts.Count;
+	foreach( $script in $scripts ) {
+		Write-Progress -Activity 'Running scripts to customize your Windows installation. Do not close this window.' -PercentComplete $complete;
+		&amp; $script;
+		$complete += $increment;
+	}
+} *&gt;&amp;1 &gt;&gt; "C:\Windows\Setup\Scripts\Specialize.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\UserOnce.ps1" transformation="Text">
+$scripts = @(
+	{
+		Get-AppxPackage -Name 'Microsoft.Windows.Ai.Copilot.Provider' | Remove-AppxPackage;
+	};
+	{
+		Set-ItemProperty -LiteralPath 'Registry::HKCU\AppEvents\Schemes' -Name '(Default)' -Type 'String' -Value '.None';
+	};
+	{
+		Set-ItemProperty -LiteralPath 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Search' -Name 'SearchboxTaskbarMode' -Type 'DWord' -Value 0;
+	};
+);
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EnhancedStorageDevices]
-"TCGSecurityActivationDisabled"=dword:00000001
+&amp; {
+	[float] $complete = 0;
+	[float] $increment = 100 / $scripts.Count;
+	foreach( $script in $scripts ) {
+		Write-Progress -Activity 'Running scripts to configure this user account. Do not close this window.' -PercentComplete $complete;
+		&amp; $script;
+		$complete += $increment;
+	}
+} *&gt;&amp;1 &gt;&gt; "$env:TEMP\UserOnce.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\DefaultUser.ps1" transformation="Text">
+$scripts = @(
+	{
+		reg.exe add "HKU\DefaultUser\Software\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f;
+	};
+	{
+		Remove-ItemProperty -LiteralPath 'Registry::HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'OneDriveSetup' -Force -ErrorAction 'Continue';
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Hidden" /t REG_DWORD /d 1 /f;
+	};
+	{
+		Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\TurnOffSystemSounds.ps1' -Raw | Invoke-Expression;
+	};
+	{
+		$names = @(
+		  'ContentDeliveryAllowed';
+		  'FeatureManagementEnabled';
+		  'OEMPreInstalledAppsEnabled';
+		  'PreInstalledAppsEnabled';
+		  'PreInstalledAppsEverEnabled';
+		  'SilentInstalledAppsEnabled';
+		  'SoftLandingEnabled';
+		  'SubscribedContentEnabled';
+		  'SubscribedContent-310093Enabled';
+		  'SubscribedContent-338387Enabled';
+		  'SubscribedContent-338388Enabled';
+		  'SubscribedContent-338389Enabled';
+		  'SubscribedContent-338393Enabled';
+		  'SubscribedContent-353698Enabled';
+		  'SystemPaneSuggestionsEnabled';
+		);
+		
+		foreach( $name in $names ) {
+		  reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v $name /t REG_DWORD /d 0 /f;
+		}
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Policies\Microsoft\Windows\Explorer" /v DisableSearchBoxSuggestions /t REG_DWORD /d 1 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v "UnattendedSetup" /t REG_SZ /d "powershell.exe -NoProfile -Command \""Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\UserOnce.ps1' -Raw | Invoke-Expression;\""" /f;
+	};
+);
 
+&amp; {
+	[float] $complete = 0;
+	[float] $increment = 100 / $scripts.Count;
+	foreach( $script in $scripts ) {
+		Write-Progress -Activity 'Running scripts to modify the default user&#x2019;&#x2019;s registry hive. Do not close this window.' -PercentComplete $complete;
+		&amp; $script;
+		$complete += $increment;
+	}
+} *&gt;&amp;1 &gt;&gt; "C:\Windows\Setup\Scripts\DefaultUser.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\FirstLogon.ps1" transformation="Text">
+$scripts = @(
+	{
+		Disable-ComputerRestore -Drive 'C:\';
+	};
+	{
+		cmd.exe /c "rmdir C:\Windows.old";
+	};
+);
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
-"LongPathsEnabled"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FileSystem]
-"LongPathsEnabled"=dword:00000001
-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Office\16.0\Common\OfficeUpdate]
-"preventteamsinstall"=dword:00000001
-
-[HKEY_USERS\DefaultUser\Software\Policies\Microsoft\Office\16.0\Teams]
-"PreventFirstLaunchAfterInstall"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications]
-"ConfigureChatAutoInstall"=dword:00000000
-
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Orchestrator\UScheduler\DevHomeUpdate]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Orchestrator\UScheduler\OutlookUpdate]
-
-[HKEY_USERS\DefaultUser\Software\Policies\Microsoft\Office\16.0\OneNote\WebServiceProvider]
-"DisableSkydriveSetupOnFirstBoot"=dword:00000001
-
-[HKEY_USERS\DefaultUser\Software\Policies\Microsoft\Office\Common\WebIntegration]
-"WebIntegrationEnabled"=dword:00000000
-
-[HKEY_USERS\DefaultUser\Software\Policies\Microsoft\Windows\OOBE]
-"DisablePrivacyExperience"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OOBE]
-"DisablePrivacyExperience"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
-"DisableWindowsConsumerFeatures"=dword:00000001
-"DisableSoftLanding"=dword:00000001
-"DisableConsumerAccountStateContent"=dword:00000001
-"DisableCloudOptimizedContent"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
-"AicEnabled"="Anywhere"
-"DisableEdgeDesktopShortcutCreation"=dword:00000001
-
-[HKEY_USERS\DefaultUser\SOFTWARE\Policies\Microsoft\Windows\Explorer]
-"DisableSearchBoxSuggestions"=dword:00000001
-
-[HKEY_USERS\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"ShowSyncProviderNotifications"=dword:00000000
-"Start_IrisRecommendations"=dword:00000000
-"Start_AccountNotifications"=dword:00000000
-
-[HKEY_USERS\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"ContentDeliveryAllowed"=dword:00000000
-"SubscribedContentEnabled"=dword:00000000
-"SubscribedContent-202914Enabled"=dword:00000000
-"SubscribedContent-280815Enabled"=dword:00000000
-"SubscribedContent-310091Enabled"=dword:00000000
-"SubscribedContent-310092Enabled"=dword:00000000
-"SubscribedContent-310093Enabled"=dword:00000000
-"SubscribedContent-314559Enabled"=dword:00000000
-"SubscribedContent-314563Enabled"=dword:00000000
-"SubscribedContent-338380Enabled"=dword:00000000
-"SubscribedContent-338381Enabled"=dword:00000000
-"SubscribedContent-338387Enabled"=dword:00000000
-"SubscribedContent-338388Enabled"=dword:00000000
-"SubscribedContent-338389Enabled"=dword:00000000
-"SubscribedContent-338393Enabled"=dword:00000000
-"SubscribedContent-353694Enabled"=dword:00000000
-"SubscribedContent-353696Enabled"=dword:00000000
-"SubscribedContent-353698Enabled"=dword:00000000
-"SubscribedContent-88000045Enabled"=dword:00000000
-"SubscribedContent-88000161Enabled"=dword:00000000
-"SubscribedContent-88000163Enabled"=dword:00000000
-"SubscribedContent-88000165Enabled"=dword:00000000
-"SubscribedContent-88000326Enabled"=dword:00000000
-"SubscribedContent-88000530Enabled"=dword:00000000
-"RotatingLockScreenEnabled"=dword:00000000
-"RotatingLockScreenOverlayEnabled"=dword:00000000
-"SoftLandingEnabled"=dword:00000000
-"PreInstalledAppsEverEnabled"=dword:00000000
-"PreInstalledAppsEnabled"=dword:00000000
-"OemPreInstalledAppsEnabled"=dword:00000000
-"SystemPaneSuggestionsEnabled"=dword:00000000
-"SilentInstalledAppsEnabled"=dword:00000000
-"FeatureManagementEnabled"=dword:00000000
-
-[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\SuggestedApps]
-
-[HKEY_USERS\DefaultUser\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
-"ScoobeSystemSettingEnabled"=dword:00000000
-
-[HKEY_USERS\DefaultUser\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
-"Enabled"=dword:00000000
-
-[HKEY_USERS\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Privacy]
-"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
-
-[HKEY_USERS\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
-"ScoobeSystemSettingEnabled"=dword:00000000
-
-[HKEY_USERS\DefaultUser\Software\Microsoft\Windows Defender Security Center\Account protection]
-"DisableNotifications"=dword:00000001
-"DisableWindowsHelloNotifications"=dword:00000001
-"DisableDynamiclockNotifications"=dword:00000001
-
-[HKEY_USERS\DefaultUser\SOFTWARE\Microsoft\Windows Security Health\State]
-"AccountProtection_MicrosoftAccount_Disconnected"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-"SettingsPageVisibility"="hide:home"
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE]
-"BypassNRO"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
-"BypassTPMCheck"=dword:00000001
-"BypassSecureBootCheck"=dword:00000001
-"BypassRAMCheck"=dword:00000001
-"BypassStorageCheck"=dword:00000001
-"BypassCPUCheck"=dword:00000001
-"BypassDiskCheck"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
-"AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
-
-[HKEY_USERS\DefaultUser\SOFTWARE\Microsoft\PCHC]
-"UpgradeEligibility"=dword:00000001
-
-[HKEY_USERS\DefaultUser\Control Panel\UnsupportedHardwareNotificationCache]
-„SV1″=dword:00000000
-„SV2″=dword:00000000
+&amp; {
+	[float] $complete = 0;
+	[float] $increment = 100 / $scripts.Count;
+	foreach( $script in $scripts ) {
+		Write-Progress -Activity 'Running scripts to finalize your Windows installation. Do not close this window.' -PercentComplete $complete;
+		&amp; $script;
+		$complete += $increment;
+	}
+} *&gt;&amp;1 &gt;&gt; "C:\Windows\Setup\Scripts\FirstLogon.log";
 		</File>
 	</Extensions>
 </unattend>
